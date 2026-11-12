@@ -1,23 +1,27 @@
 /**
  * milAI24.gr — Main Interactive Frontend Logic
  * Multi-scenario dialogue simulator, generalized ROI calculator,
- * responsive mobile navigation, and accessible FAQ accordion.
+ * bilingual i18n support (Greek & English), responsive navigation & FAQ accordion.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   const config = window.MILAI_CONFIG || {};
 
+  // Detect current language from <html lang="...">
+  const pageLang = document.documentElement.lang === "en" ? "en" : "el";
+  const i18n = (config.i18n && config.i18n[pageLang]) || (config.i18n && config.i18n.el) || {};
+
   // 1. Hydrate UI elements from config.js
-  hydrateConfig(config);
+  hydrateConfig(config, pageLang);
 
   // 2. Setup Live Demo Phone Card & Copy functionality
-  setupDemoCard(config);
+  setupDemoCard(config, i18n);
 
   // 3. Interactive Multi-Scenario Dialogue Simulator
-  setupDialogueSimulator(config);
+  setupDialogueSimulator(config, pageLang, i18n);
 
   // 4. Generalized B2B ROI Calculator for all businesses
-  setupRoiCalculator();
+  setupRoiCalculator(i18n, pageLang);
 
   // 5. Accessible FAQ Accordion
   setupFaqAccordion();
@@ -30,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Hydrates static elements across the page using MILAI_CONFIG
+ * Hydrates static elements across the page using MILAI_CONFIG and localized values
  */
-function hydrateConfig(config) {
+function hydrateConfig(config, pageLang) {
   if (!config) return;
 
   // Hydrate Phone numbers
@@ -57,7 +61,10 @@ function hydrateConfig(config) {
 
     const emailLinks = document.querySelectorAll(".cfg-contact-email-link");
     emailLinks.forEach((el) => {
-      const subject = encodeURIComponent(config.contact.subjectDefault || "Ενδιαφέρον για milAI24");
+      const subjectRaw = (config.contact.subjectDefault && config.contact.subjectDefault[pageLang]) 
+        || config.contact.subjectDefault 
+        || "milAI24 Inquiry";
+      const subject = encodeURIComponent(subjectRaw);
       el.setAttribute("href", `mailto:${config.contact.email}?subject=${subject}`);
     });
   }
@@ -66,17 +73,26 @@ function hydrateConfig(config) {
   if (config.pricing) {
     const setupFeeEls = document.querySelectorAll(".cfg-price-setup");
     setupFeeEls.forEach((el) => {
-      el.textContent = config.pricing.setupPriceDisplay || "Κατόπιν Μελέτης";
+      const val = (config.pricing.setupPriceDisplay && config.pricing.setupPriceDisplay[pageLang]) 
+        || config.pricing.setupPriceDisplay 
+        || "Custom Quote";
+      el.textContent = val;
     });
 
     const monthlySubEls = document.querySelectorAll(".cfg-price-monthly");
     monthlySubEls.forEach((el) => {
-      el.textContent = config.pricing.monthlySubscriptionToUs || "0€ / μήνα";
+      const val = (config.pricing.monthlySubscriptionToUs && config.pricing.monthlySubscriptionToUs[pageLang]) 
+        || config.pricing.monthlySubscriptionToUs 
+        || "0€ / μήνα";
+      el.textContent = val;
     });
 
     const minCostEls = document.querySelectorAll(".cfg-price-per-min");
     minCostEls.forEach((el) => {
-      el.textContent = config.pricing.estimatedProviderCostPerMin || "~0,10€ / λεπτό";
+      const val = (config.pricing.estimatedProviderCostPerMin && config.pricing.estimatedProviderCostPerMin[pageLang]) 
+        || config.pricing.estimatedProviderCostPerMin 
+        || "~0,10€ / λεπτό";
+      el.textContent = val;
     });
   }
 }
@@ -84,7 +100,7 @@ function hydrateConfig(config) {
 /**
  * Demo Card interactions (Call button & Copy button)
  */
-function setupDemoCard(config) {
+function setupDemoCard(config, i18n) {
   const copyBtn = document.getElementById("demo-copy-btn");
   const callBtn = document.getElementById("demo-call-btn");
 
@@ -92,9 +108,9 @@ function setupDemoCard(config) {
     copyBtn.addEventListener("click", () => {
       const textToCopy = config.demoPhone.raw || config.demoPhone.display;
       navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast("Ο αριθμός αντιγράφηκε στο πρόχειρο!");
+        showToast(i18n.copySuccess || "Phone number copied to clipboard!");
       }).catch(() => {
-        showToast(`Αριθμός: ${config.demoPhone.display}`);
+        showToast(`Number: ${config.demoPhone.display}`);
       });
     });
   }
@@ -103,7 +119,7 @@ function setupDemoCard(config) {
     callBtn.addEventListener("click", (e) => {
       if (config.demoPhone.isPlaceholder) {
         e.preventDefault();
-        showToast("Η γραμμή επίδειξης είναι υπό τελική ρύθμιση. Επικοινωνήστε μαζί μας για άμεση παρουσίαση!");
+        showToast(i18n.demoPlaceholderNotice || "Live demo line is in final setup. Contact us for an immediate private demo!");
         const contactSection = document.getElementById("contact");
         if (contactSection) {
           contactSection.scrollIntoView({ behavior: "smooth" });
@@ -115,14 +131,19 @@ function setupDemoCard(config) {
 
 /**
  * Interactive Multi-Scenario Dialogue Simulator inside Demo Card
- * Allows visitors to toggle between Medical, Technical/Field, and Hospitality scenarios.
+ * Supports bilingual scenarios and allows visitors to toggle between Medical, Technical/Field, and Hospitality.
  */
-function setupDialogueSimulator(config) {
-  const scenarios = config.scenarios || {};
-  const scenarioKeys = Object.keys(scenarios);
+function setupDialogueSimulator(config, pageLang, i18n) {
+  // Select scenario set based on page language
+  const scenarios = (config.scenarios && config.scenarios[pageLang]) 
+    || (config.scenarios && config.scenarios.el) 
+    || config.scenarios 
+    || {};
+
+  const scenarioKeys = Object.keys(scenarios).filter(k => k === "medical" || k === "technical" || k === "hospitality");
   if (!scenarioKeys.length) return;
 
-  let currentScenarioKey = scenarioKeys[0]; // Default to medical or first
+  let currentScenarioKey = scenarioKeys[0]; // Default to medical
   let steps = scenarios[currentScenarioKey].steps || [];
 
   const bubbleSender = document.getElementById("sim-sender");
@@ -220,13 +241,13 @@ function setupDialogueSimulator(config) {
 
   function startAutoPlay() {
     isPlaying = true;
-    if (playToggleBtn) playToggleBtn.textContent = "Παύση ⏸";
+    if (playToggleBtn) playToggleBtn.textContent = i18n.pauseText || "Pause ⏸";
     autoPlayTimer = setInterval(advanceStep, 4500);
   }
 
   function stopAutoPlay() {
     isPlaying = false;
-    if (playToggleBtn) playToggleBtn.textContent = "Αυτόματο ▶";
+    if (playToggleBtn) playToggleBtn.textContent = i18n.playText || "Auto ▶";
     if (autoPlayTimer) {
       clearInterval(autoPlayTimer);
       autoPlayTimer = null;
@@ -263,7 +284,7 @@ function setupDialogueSimulator(config) {
  * Calculates estimated revenue lost per month & year when calls go unanswered
  * Formula: Missed Calls/Week × 4.33 × Conversion Rate (20%) × Average Customer Value
  */
-function setupRoiCalculator() {
+function setupRoiCalculator(i18n, pageLang) {
   const missedCallsInput = document.getElementById("calc-missed-calls");
   const avgOrderInput = document.getElementById("calc-avg-order");
 
@@ -275,12 +296,16 @@ function setupRoiCalculator() {
 
   if (!missedCallsInput || !avgOrderInput) return;
 
+  const numLocale = pageLang === "en" ? "en-US" : "el-GR";
+  const currencySymbol = "€";
+
   function calculate() {
     const weeklyMissed = parseInt(missedCallsInput.value, 10) || 15;
     const avgValue = parseInt(avgOrderInput.value, 10) || 100;
 
-    missedCallsVal.textContent = `${weeklyMissed} κλήσεις / εβδομάδα`;
-    avgOrderVal.textContent = `${avgValue}€`;
+    const unitCalls = i18n.callsPerWeek || "missed calls / week";
+    missedCallsVal.textContent = `${weeklyMissed} ${unitCalls}`;
+    avgOrderVal.textContent = pageLang === "en" ? `${currencySymbol}${avgValue}` : `${avgValue}${currencySymbol}`;
 
     // Monthly missed calls = weekly * ~4.33
     // Conservative conversion rate = 20% (customers who would book/buy if immediately answered)
@@ -289,16 +314,33 @@ function setupRoiCalculator() {
     const recoveredMonthlyRevenue = convertedCustomers * avgValue;
     const recoveredAnnualRevenue = recoveredMonthlyRevenue * 12;
 
+    const formattedMonthly = recoveredMonthlyRevenue.toLocaleString(numLocale);
+    const formattedAnnual = recoveredAnnualRevenue.toLocaleString(numLocale);
+
     if (recoveredResult) {
-      recoveredResult.textContent = `+${recoveredMonthlyRevenue.toLocaleString("el-GR")}€ / μήνα`;
+      if (pageLang === "en") {
+        recoveredResult.textContent = `+€${formattedMonthly} / mo`;
+      } else {
+        recoveredResult.textContent = `+${formattedMonthly}€ / μήνα`;
+      }
     }
 
     if (annualSavingsResult) {
-      annualSavingsResult.textContent = `~${recoveredAnnualRevenue.toLocaleString("el-GR")}€ ετήσια έσοδα που δεν χάνονται στον ανταγωνισμό`;
+      if (i18n.annualRevenueSaved) {
+        annualSavingsResult.textContent = i18n.annualRevenueSaved.replace("{sum}", formattedAnnual);
+      } else {
+        annualSavingsResult.textContent = `~€${formattedAnnual} annual revenue saved from competitors`;
+      }
     }
 
     if (convertedCustomersText) {
-      convertedCustomersText.textContent = `Αντιστοιχεί σε ~${convertedCustomers} διασωθέντες πελάτες/μήνα (από ${monthlyMissedCalls} αναπάντητες)`;
+      if (i18n.rescuedClients) {
+        convertedCustomersText.textContent = i18n.rescuedClients
+          .replace("{count}", convertedCustomers)
+          .replace("{total}", monthlyMissedCalls);
+      } else {
+        convertedCustomersText.textContent = `Equivalent to ~${convertedCustomers} rescued clients/mo (from ${monthlyMissedCalls} missed calls)`;
+      }
     }
   }
 

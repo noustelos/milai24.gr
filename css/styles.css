@@ -281,6 +281,50 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1rem;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.lang-btn {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  padding: 0.12rem 0.3rem;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+.lang-btn:hover {
+  color: var(--color-navy-dark);
+}
+
+.lang-btn.active {
+  color: var(--color-accent);
+  background: rgba(16, 185, 129, 0.12);
+  cursor: default;
+}
+
+.lang-divider {
+  color: #CBD5E1;
+  font-size: 0.72rem;
+}
+
 /* Mobile Menu Toggle */
 .mobile-toggle {
   display: none;

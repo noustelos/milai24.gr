@@ -35,15 +35,17 @@
 
 ```text
 milai24/
-├── index.html            # Η κύρια landing page (Semantic HTML5, SEO, Schema.org)
+├── index.html            # Η κύρια landing page (Ελληνικά: Semantic HTML5, SEO, Schema.org)
+├── en/
+│   └── index.html        # Full English version (milai24.gr/en/ with dedicated English SEO & content)
 ├── _headers              # HTTP security & caching headers για το Cloudflare Pages
 ├── .gitignore            # Αγνοεί περιττά αρχεία συστήματος (.DS_Store κ.λπ.)
 ├── README.md             # Αυτό το αρχείο (SSOT, Changelog, Οδηγίες)
 ├── css/
 │   └── styles.css        # Modular CSS3, CSS Variables, Responsive (Mobile-First)
 ├── js/
-│   ├── config.js         # Κεντρικό configuration (Single Source of Truth για UI data & Scenarios)
-│   └── main.js           # Client-side logic (Multi-scenario Simulator, ROI Calculator, FAQ, UI)
+│   ├── config.js         # Κεντρικό configuration (Bilingual UI data & Scenarios)
+│   └── main.js           # Client-side logic (Bilingual Simulator, ROI Calculator, FAQ, UI)
 └── assets/
     ├── logo.svg          # Επίσημο λογότυπο milAI24 (με έμφαση στο πράσινο AI & soundwave)
     ├── favicon.svg       # Favicon υψηλής ανάλυσης (SVG)
@@ -106,6 +108,17 @@ demoPhone: {
 ---
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
+
+### [2026-11-12] — v1.2.0: Add Full English Version (/en/) with Bilingual Simulator & Language Switcher
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που δημιουργήθηκαν / τροποποιήθηκαν:**
+  - `en/index.html`: Πλήρης αγγλική έκδοση της landing page σε φυσική, επαγγελματική B2B ορολογία (`milai24.gr/en/`), με ξεχωριστά αγγλικά SEO meta tags, Open Graph και Schema.org structured data, καθώς και κοινά relative assets (`../css/`, `../js/`, `../assets/`).
+  - `index.html`: Προσθήκη αμφίδρομων `hreflang` tags (`el`, `en`, `x-default`) και ενσωμάτωση του language switcher `GR | EN` στο navigation bar.
+  - `css/styles.css`: Προσθήκη στυλ για τον επιλογέα γλώσσας (`.lang-switcher`, `.lang-btn`, `.nav-actions`), διαθέσιμος τόσο σε desktop όσο και σε mobile viewport.
+  - `js/config.js`: Εμπλουτισμός με δίγλωσσα δεδομένα (Greek & English) για όλα τα πεδία UI, τα σενάρια προσομοίωσης διαλόγων (Medical, Technical, Hospitality) και τοπικοποιημένα μηνύματα (`i18n`).
+  - `js/main.js`: Αυτόματη ανίχνευση γλώσσας από το `<html lang="...">`, δυναμική φόρτωση των αντίστοιχων αγγλικών ή ελληνικών διαλόγων στον προσομοιωτή και προσαρμογή του υπολογιστή ROI.
+  - `README.md`: Ενημέρωση της δομής αρχείων και καταγραφή Changelog v1.2.0.
+- **Σκοπός:** Πλήρης πολυγλωσσική κάλυψη (Ελληνικά & Αγγλικά) χωρίς build dependencies, έτοιμη για deploy σε Cloudflare Pages και GitHub Pages.
 
 ### [2026-11-12] — v1.1.1: Add NOUSTELOS_STUDIO Footer Credit
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
