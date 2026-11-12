@@ -107,6 +107,14 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-12] — v1.1.1: Add NOUSTELOS_STUDIO Footer Credit
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `index.html`: Προσθήκη ενεργού συνδέσμου δημιουργού `A NOUSTELOS_STUDIO /> project` στο κάτω μέρος του footer προς `https://noustelos.gr/` με `target="_blank" rel="noopener noreferrer"`.
+  - `css/styles.css`: Προσθήκη tech/monospace styling (`.credit-link`, `.credit-brand`) με διακριτικό background και emerald hover εφέ (`#10B981`) εναρμονισμένο με το dark theme του footer.
+  - `README.md`: Ενημέρωση Changelog v1.1.1.
+- **Σκοπός:** Ενσωμάτωση υπογραφής δημιουργού NOUSTELOS_STUDIO στο footer με υψηλή αισθητική ποιότητα και άμεση παραπομπή.
+
 ### [2026-11-12] — v1.1.0: Broaden B2B Positioning to All Businesses & Professionals
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**

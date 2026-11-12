@@ -1440,6 +1440,46 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   font-size: 0.82rem;
   color: #64748B;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-credit {
+  display: flex;
+  align-items: center;
+}
+
+.credit-link {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: #94A3B8;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
+.credit-link .credit-brand {
+  color: #E2E8F0;
+  font-weight: 700;
+  transition: color var(--transition-fast);
+}
+
+.credit-link:hover {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.credit-link:hover .credit-brand {
+  color: var(--color-accent);
 }
 
 /* Toast Notification */
