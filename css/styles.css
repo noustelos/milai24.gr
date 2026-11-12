@@ -573,6 +573,54 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 1.25rem;
 }
 
+.scenario-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  scrollbar-width: none;
+}
+
+.scenario-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.scenario-tab-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #CBD5E1;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.scenario-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+}
+
+.scenario-tab-btn.active {
+  background: var(--color-accent);
+  color: #FFFFFF;
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
+}
+
+.scenario-desc-note {
+  font-size: 0.76rem;
+  color: #94A3B8;
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+}
+
 .preview-title {
   display: flex;
   align-items: center;
@@ -782,117 +830,170 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Hotels & Vacation Rentals (Special Section)
+   Industries & Professions (Who It's For - 4 Core Sectors)
    ========================================================================== */
-.section-hotels {
+.section-industries {
   padding: var(--section-spacing) 0;
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
   position: relative;
 }
 
-.hotel-banner {
+/* Answering machine comparison banner */
+.answering-machine-comparison {
   background: var(--color-navy-dark);
   border-radius: var(--radius-lg);
   color: #FFFFFF;
-  padding: 3.5rem;
+  padding: 3rem 2.5rem;
   margin-bottom: 3.5rem;
   box-shadow: var(--shadow-lg);
+  border-left: 5px solid var(--color-accent);
   position: relative;
   overflow: hidden;
 }
 
-.hotel-banner::after {
+.answering-machine-comparison::after {
   content: "";
   position: absolute;
   bottom: -40px;
   right: -40px;
-  width: 280px;
-  height: 280px;
+  width: 260px;
+  height: 260px;
   background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
 
-.hotel-grid-split {
+.answering-machine-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 3rem;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 2.5rem;
   align-items: center;
 }
 
-.hotel-headline {
-  color: #FFFFFF;
-  font-size: 2.25rem;
-  line-height: 1.25;
-  margin-bottom: 1.25rem;
-}
-
-.hotel-body {
-  color: #CBD5E1;
-  font-size: 1.08rem;
-  line-height: 1.65;
-  margin-bottom: 1.75rem;
-}
-
-.hotel-perks-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-
-.hotel-perk-box {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
+.comparison-col-bad {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
   border-radius: var(--radius-md);
-  padding: 1.75rem;
-  transition: all var(--transition-smooth);
+  padding: 1.5rem;
 }
 
-.hotel-perk-box:hover {
-  transform: translateY(-3px);
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-md);
-}
-
-.hotel-perk-icon {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.hotel-perk-title {
-  font-size: 1.15rem;
-  color: var(--color-navy-dark);
-  margin-bottom: 0.5rem;
-}
-
-.hotel-perk-desc {
-  font-size: 0.92rem;
-  color: var(--color-text-muted);
-  line-height: 1.55;
-}
-
-/* Direct Booking Savings Callout */
-.direct-booking-callout {
+.comparison-col-good {
   background: rgba(16, 185, 129, 0.12);
   border: 1px solid var(--color-accent);
   border-radius: var(--radius-md);
   padding: 1.5rem;
 }
 
-.callout-title {
-  font-size: 1.1rem;
+.comparison-tag {
+  font-size: 0.75rem;
   font-weight: 700;
-  color: #34D399;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: 0.6rem;
 }
 
-.callout-desc {
+.comparison-col-bad .comparison-tag {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.comparison-col-good .comparison-tag {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.comparison-text {
   font-size: 0.92rem;
-  color: #E2E8F0;
-  line-height: 1.5;
+  line-height: 1.55;
+}
+
+.industry-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.industry-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.industry-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.industry-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.industry-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--color-badge-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.65rem;
+  flex-shrink: 0;
+}
+
+.industry-card-category {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.industry-card-title {
+  font-size: 1.25rem;
+  color: var(--color-navy-dark);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.industry-card-desc {
+  font-size: 0.94rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.industry-perks-list {
+  list-style: none;
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 1rem;
+}
+
+.industry-perks-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--color-navy-mid);
+  margin-bottom: 0.5rem;
+}
+
+.industry-perks-list li svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 3px;
 }
 
 /* ==========================================================================
@@ -1391,9 +1492,14 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
   }
 
-  .hotel-grid-split {
+  .answering-machine-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .industry-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .cards-grid-3,

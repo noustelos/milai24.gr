@@ -1,6 +1,7 @@
 /**
  * milAI24.gr — Main Interactive Frontend Logic
- * Lightweight, vanilla JS without external dependencies.
+ * Multi-scenario dialogue simulator, generalized ROI calculator,
+ * responsive mobile navigation, and accessible FAQ accordion.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. Setup Live Demo Phone Card & Copy functionality
   setupDemoCard(config);
 
-  // 3. Interactive Dialogue Simulator in Demo Box
+  // 3. Interactive Multi-Scenario Dialogue Simulator
   setupDialogueSimulator(config);
 
-  // 4. Interactive ROI Calculator for Hotels & Businesses
+  // 4. Generalized B2B ROI Calculator for all businesses
   setupRoiCalculator();
 
   // 5. Accessible FAQ Accordion
@@ -113,19 +114,26 @@ function setupDemoCard(config) {
 }
 
 /**
- * Interactive Step-by-Step Dialogue Simulator inside Demo Card
+ * Interactive Multi-Scenario Dialogue Simulator inside Demo Card
+ * Allows visitors to toggle between Medical, Technical/Field, and Hospitality scenarios.
  */
 function setupDialogueSimulator(config) {
-  const steps = config.sampleConversation || [];
-  if (!steps.length) return;
+  const scenarios = config.scenarios || {};
+  const scenarioKeys = Object.keys(scenarios);
+  if (!scenarioKeys.length) return;
+
+  let currentScenarioKey = scenarioKeys[0]; // Default to medical or first
+  let steps = scenarios[currentScenarioKey].steps || [];
 
   const bubbleSender = document.getElementById("sim-sender");
   const bubbleText = document.getElementById("sim-text");
   const bubbleContainer = document.getElementById("sim-bubble");
   const stepCounter = document.getElementById("sim-step-counter");
+  const scenarioDesc = document.getElementById("sim-scenario-desc");
   const nextBtn = document.getElementById("sim-next-btn");
   const prevBtn = document.getElementById("sim-prev-btn");
   const playToggleBtn = document.getElementById("sim-play-toggle");
+  const tabButtons = document.querySelectorAll(".scenario-tab-btn");
 
   let currentIndex = 0;
   let autoPlayTimer = null;
@@ -150,14 +158,51 @@ function setupDialogueSimulator(config) {
   }
 
   function advanceStep() {
+    if (!steps.length) return;
     currentIndex = (currentIndex + 1) % steps.length;
     renderStep(currentIndex);
   }
 
   function prevStep() {
+    if (!steps.length) return;
     currentIndex = (currentIndex - 1 + steps.length) % steps.length;
     renderStep(currentIndex);
   }
+
+  function switchScenario(newKey) {
+    if (!scenarios[newKey]) return;
+    currentScenarioKey = newKey;
+    steps = scenarios[newKey].steps || [];
+    currentIndex = 0;
+
+    // Update active tab UI
+    tabButtons.forEach((btn) => {
+      if (btn.getAttribute("data-scenario") === newKey) {
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+      } else {
+        btn.classList.remove("active");
+        btn.setAttribute("aria-selected", "false");
+      }
+    });
+
+    // Update scenario description note
+    if (scenarioDesc) {
+      scenarioDesc.textContent = scenarios[newKey].subtitle || "";
+    }
+
+    renderStep(0);
+    resetAutoPlay();
+  }
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetScenario = btn.getAttribute("data-scenario");
+      if (targetScenario && targetScenario !== currentScenarioKey) {
+        switchScenario(targetScenario);
+      }
+    });
+  });
 
   if (nextBtn) {
     nextBtn.addEventListener("click", () => {
@@ -188,6 +233,13 @@ function setupDialogueSimulator(config) {
     }
   }
 
+  function resetAutoPlay() {
+    if (isPlaying) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = setInterval(advanceStep, 4500);
+    }
+  }
+
   if (playToggleBtn) {
     playToggleBtn.addEventListener("click", () => {
       if (isPlaying) {
@@ -198,14 +250,18 @@ function setupDialogueSimulator(config) {
     });
   }
 
-  // Initial step render & optional auto-play
+  // Initial render
+  if (scenarioDesc && scenarios[currentScenarioKey]) {
+    scenarioDesc.textContent = scenarios[currentScenarioKey].subtitle || "";
+  }
   renderStep(0);
   startAutoPlay();
 }
 
 /**
- * Interactive ROI Calculator
- * Calculates estimated revenue lost per month and recovered direct booking value.
+ * Generalized B2B ROI Calculator
+ * Calculates estimated revenue lost per month & year when calls go unanswered
+ * Formula: Missed Calls/Week × 4.33 × Conversion Rate (20%) × Average Customer Value
  */
 function setupRoiCalculator() {
   const missedCallsInput = document.getElementById("calc-missed-calls");
@@ -214,32 +270,35 @@ function setupRoiCalculator() {
   const missedCallsVal = document.getElementById("calc-missed-calls-val");
   const avgOrderVal = document.getElementById("calc-avg-order-val");
   const recoveredResult = document.getElementById("calc-recovered-sum");
-  const otaSavingsResult = document.getElementById("calc-ota-savings");
+  const annualSavingsResult = document.getElementById("calc-annual-savings");
+  const convertedCustomersText = document.getElementById("calc-converted-customers");
 
   if (!missedCallsInput || !avgOrderInput) return;
 
   function calculate() {
-    const dailyMissed = parseInt(missedCallsInput.value, 10) || 5;
-    const avgValue = parseInt(avgOrderInput.value, 10) || 200;
+    const weeklyMissed = parseInt(missedCallsInput.value, 10) || 15;
+    const avgValue = parseInt(avgOrderInput.value, 10) || 100;
 
-    missedCallsVal.textContent = `${dailyMissed} κλήσεις/ημέρα`;
+    missedCallsVal.textContent = `${weeklyMissed} κλήσεις / εβδομάδα`;
     avgOrderVal.textContent = `${avgValue}€`;
 
-    // Monthly missed calls = daily * 30
-    // Conservative conversion rate of missed calls saved = 15%
-    const monthlyMissed = dailyMissed * 30;
-    const convertedCalls = Math.round(monthlyMissed * 0.15);
-    const recoveredRevenue = convertedCalls * avgValue;
-
-    // Direct booking commission savings vs OTAs (avg 18% commission saved)
-    const otaCommissionSaved = Math.round(recoveredRevenue * 0.18);
+    // Monthly missed calls = weekly * ~4.33
+    // Conservative conversion rate = 20% (customers who would book/buy if immediately answered)
+    const monthlyMissedCalls = Math.round(weeklyMissed * 4.33);
+    const convertedCustomers = Math.max(1, Math.round(monthlyMissedCalls * 0.20));
+    const recoveredMonthlyRevenue = convertedCustomers * avgValue;
+    const recoveredAnnualRevenue = recoveredMonthlyRevenue * 12;
 
     if (recoveredResult) {
-      recoveredResult.textContent = `+${recoveredRevenue.toLocaleString("el-GR")}€`;
+      recoveredResult.textContent = `+${recoveredMonthlyRevenue.toLocaleString("el-GR")}€ / μήνα`;
     }
 
-    if (otaSavingsResult) {
-      otaSavingsResult.textContent = `~${otaCommissionSaved.toLocaleString("el-GR")}€ εξοικονόμηση προμηθειών OTA`;
+    if (annualSavingsResult) {
+      annualSavingsResult.textContent = `~${recoveredAnnualRevenue.toLocaleString("el-GR")}€ ετήσια έσοδα που δεν χάνονται στον ανταγωνισμό`;
+    }
+
+    if (convertedCustomersText) {
+      convertedCustomersText.textContent = `Αντιστοιχεί σε ~${convertedCustomers} διασωθέντες πελάτες/μήνα (από ${monthlyMissedCalls} αναπάντητες)`;
     }
   }
 
@@ -339,4 +398,3 @@ function showToast(message) {
     toast.classList.remove("show");
   }, 3500);
 }
-
