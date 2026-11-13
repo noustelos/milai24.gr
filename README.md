@@ -110,6 +110,32 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.1.0: Dark-First Luxury Tech Color System (Butter Yellow & Deep Tech Obsidian)
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `css/styles.css`:
+    - Πλήρης μετάβαση του visual branding σε Dark-First Luxury Tech παλέτα βασισμένη στο Butter Yellow & Deep Tech Obsidian.
+    - Ενημέρωση CSS variables: Primary Background `#121824` (Deep Tech Obsidian), Elevated Surfaces `#171F2E` (Matte Anthracite / Deep Slate), Well Background `#0B0F17` (Obsidian Well).
+    - Εισαγωγή Primary Accent `#F9E7B9` (Rich Butter Cream) για CTAs, ενεργές καταστάσεις και tabs, με hover `#FFF1C5` (Digital Cream Light).
+    - Εισαγωγή Secondary Accent `#F1D693` (Muted Gold Butter) για text highlights, brand accents, hairline borders και ηχητικά κύματα.
+    - Αναβάθμιση τυπογραφίας σε Pure White `#FFFFFF` για Headings και Soft Platinum `#E2E8F0` για Body Text, με Muted Labels `#94A3B8`.
+    - Αυστηρή τήρηση προσβασιμότητας και contrast: Το `.btn-primary` φέρει σκούρο κείμενο `#121824` πάνω σε `#F9E7B9`.
+    - Voice AI Audio Aura: Ατμοσφαιρικό radial gradient glow γύρω από το soundwave visualizer (`rgba(249, 231, 185, 0.16)` έως `rgba(241, 214, 147, 0.06)`) με γραμμικό gradient στις ράβδους `linear-gradient(180deg, #F9E7B9 0%, #F1D693 100%)`.
+    - Εναρμόνιση όλων των ενοτήτων (Hero, Problem/Solution, Process, Industries, ROI Calculator, Pricing, FAQ, Contact, Footer) στον ενιαίο dark luxury καμβά.
+  - `index.html` & `en/index.html`:
+    - Ενημέρωση `<meta name="theme-color" content="#121824">`.
+    - Αφαίρεση legacy πράσινων inline styles από `.section-tag`.
+    - Ενοποίηση των λογοτύπων στο footer με το νέο ενιαίο dark-theme vector logo (`assets/logo.svg`).
+  - `assets/logo.svg` & `assets/logo-dark.svg`:
+    - Ενημέρωση των διανυσματικών λογοτύπων με Deep Slate background (`#171F2E`), hairline border (`#F1D693`), χρυσές ράβδους soundwave (`#F9E7B9` / `#F1D693`) και Pure White / Gold typography.
+  - `assets/favicon.svg` & `assets/og-image.svg`:
+    - Ενημέρωση favicon και social preview banner στη νέα dark luxury χρωματική ταυτότητα.
+  - `js/main.js`:
+    - Ενημέρωση του toast notification icon stroke σε `#F9E7B9`.
+  - `README.md`:
+    - Ενημέρωση Changelog v2.1.0.
+- **Σκοπός:** Πλήρης μετασχηματισμός του visual identity σε Dark-First Luxury Tech αισθητική (Butter Yellow & Deep Tech Obsidian), διατηρώντας 100% την κοφτερή γεωμετρική αρχιτεκτονική (`border-radius: 0px`, `1px` hairline borders) και μηδενικά emojis.
+
 ### [2026-11-13] — v2.0.1: Hero/Navbar Proportion Refinement, Single-Line Nav & Footer Logo Fix
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**

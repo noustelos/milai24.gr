@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 44" fill="none" role="img" aria-label="milAI24 Logo">
-  <!-- Soundwave Icon Badge (Dark Surface / Sharp Vapi-style) -->
-  <rect x="2" y="4" width="36" height="36" rx="0" fill="#1E293B" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1"/>
-  <rect x="9" y="18" width="3" height="8" rx="0" fill="#10B981"/>
-  <rect x="14.5" y="13" width="3" height="18" rx="0" fill="#10B981"/>
-  <rect x="20" y="9" width="3" height="26" rx="0" fill="#34D399"/>
-  <rect x="25.5" y="14" width="3" height="16" rx="0" fill="#10B981"/>
-  <rect x="31" y="19" width="3" height="6" rx="0" fill="#10B981"/>
+  <!-- Soundwave Icon Badge (Dark-First Luxury Tech) -->
+  <rect x="2" y="4" width="36" height="36" rx="0" fill="#171F2E" stroke="#F1D693" stroke-width="1"/>
+  <rect x="9" y="18" width="3" height="8" rx="0" fill="#F9E7B9"/>
+  <rect x="14.5" y="13" width="3" height="18" rx="0" fill="#F9E7B9"/>
+  <rect x="20" y="9" width="3" height="26" rx="0" fill="#F1D693"/>
+  <rect x="25.5" y="14" width="3" height="16" rx="0" fill="#F9E7B9"/>
+  <rect x="31" y="19" width="3" height="6" rx="0" fill="#F9E7B9"/>
 
-  <!-- Typography: milAI24 (White & Emerald) -->
+  <!-- Typography: milAI24 (Pure White & Butter Gold) -->
   <text x="48" y="30" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="-0.6">
-    <tspan fill="#FFFFFF">mil</tspan><tspan fill="#10B981">AI</tspan><tspan fill="#FFFFFF">24</tspan><tspan fill="#10B981" font-size="18" font-weight="700">.gr</tspan>
+    <tspan fill="#FFFFFF">mil</tspan><tspan fill="#F9E7B9">AI</tspan><tspan fill="#FFFFFF">24</tspan><tspan fill="#F1D693" font-size="18" font-weight="700">.gr</tspan>
   </text>
 </svg>
