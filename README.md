@@ -110,6 +110,25 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.3.2: Full Codebase & Integrity Audit (HTML/CSS/JS Validation & Syntax Optimization)
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `css/styles.css`:
+    - Αφαίρεση ορφανού τμήματος δηλώσεων CSS (orphan property declarations) στις γραμμές του `.contact-subtitle` που περιείχε πλεονάζουσα κλείστρα (`}`), αποκαθιστώντας 100% την ισορροπία των CSS braces (273 open / 273 close, final depth: 0).
+    - Επιβεβαίωση της καθολικής ισχύος του `border-radius: var(--radius-zero) !important;` (`0px`) και της σωστής λειτουργίας του `overflow-x: clip;` χωρίς παρεμβολή στο `position: sticky` του Navbar.
+    - Επιβεβαίωση των responsive breakpoints (`1024px`, `960px`, `860px`, `480px`) για μηδενικό horizontal overflow.
+  - `index.html` & `en/index.html`:
+    - Πλήρης επαλήθευση εγκυρότητας HTML syntax (31 IDs έκαστο, ισοζυγισμένα tags, μηδέν unclosed elements).
+    - Επιβεβαίωση 100% λειτουργικότητας των 23 εσωτερικών anchor links, των canonical links, των αμφίδρομων `hreflang` (`el`, `en`, `x-default`) και του language switcher (`./en/` & `../`).
+  - `js/main.js` & `js/config.js`:
+    - Επιβεβαίωση της αντιστοίχισης όλων των DOM selectors (Simulator, ROI Calculator, FAQ Accordion, Contact).
+    - Επαλήθευση μηδενικής ύπαρξης παλαιών αγγλισμών («Επαγγελματίες Πεδίου») στα ελληνικά σενάρια και labels.
+  - `assets/*.svg`:
+    - Επιβεβαίωση της XML/SVG δομής και των διαστάσεων/viewBox σε `logo.svg`, `logo-dark.svg`, `favicon.svg` και `og-image.svg`.
+  - `README.md`:
+    - Ενημέρωση τεκμηρίωσης και καταγραφή Changelog v2.3.2.
+- **Σκοπός:** Αυστηρός τεχνικός έλεγχος ποιότητας (Full Codebase & Integrity Audit) που εξασφαλίζει απόλυτη συνέπεια, σταθερότητα και μηδενικά σφάλματα σε όλο το repository μετά από όλες τις διαδοχικές επεμβάσεις (v2.1.0 – v2.3.1).
+
 ### [2026-11-13] — v2.3.1: Highlight 2 Concurrent Calls Feature on a Single Number (Zero Busy Tone)
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**

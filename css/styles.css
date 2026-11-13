@@ -1632,10 +1632,6 @@ header.scrolled,
   line-height: 1.7;
   max-width: 65ch;
 }
-  color: #94A3B8;
-  font-size: 1.1rem;
-  margin-bottom: 2.25rem;
-}
 
 .contact-actions {
   display: flex;
