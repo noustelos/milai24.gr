@@ -110,6 +110,19 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.2.1: Typography Hierarchy Boost (Enlarged Section Tags, 2.75rem H2 Titles & Prominent Editorial Callout)
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `css/styles.css`:
+    - Αναβάθμιση του μεγέθους των Monospace Section Tags (`.section-tag`, `.hero-badge-tag`) από `0.78rem` στα **`0.95rem` (`~15.2px`)**, με `font-weight: 600`, `letter-spacing: 0.08em` και έντονο χρώμα `#F9E7B9` (Rich Butter Cream), ώστε να λειτουργούν ως επιβλητικοί οδηγοί κατά το scroll.
+    - Αύξηση του μεγέθους των κύριων τίτλων ενοτήτων (`h2` / `.section-title`) σε desktop στα **`2.75rem` (`44px`)** με `line-height: 1.18` και `letter-spacing: -0.03em`, και σε mobile στα **`2rem` (`32px`)**, διασφαλίζοντας ξεκάθαρη οπτική ιεραρχία έναντι του 17px body copy.
+    - Αναβάθμιση του Editorial Callout Block («Ο Εξελιγμένος Αυτόματος Τηλεφωνητής»): το lead κείμενο αυξήθηκε σε **`1.25rem` (`20px`)** με `line-height: 1.65`, και το label (`.editorial-callout-badge`) αυξήθηκε σε **`1rem` (`16px`)** σε `#F9E7B9` με αυξημένο `margin-bottom: 1rem`.
+  - `index.html` & `en/index.html`:
+    - Ενημέρωση των section tags σε σαφείς τεχνικούς οδηγούς: `ΓΙΑΤΙ milAI24 // ZERO LOCK-IN` (EL) και `WHY milAI24 // ZERO LOCK-IN` (EN).
+  - `README.md`:
+    - Ενημέρωση Changelog v2.2.1.
+- **Σκοπός:** Άμεση οπτική ενίσχυση της τυπογραφικής ιεραρχίας, καθιστώντας τα section tags και τους τίτλους ενοτήτων άμεσα ευδιάκριτους κατά την ανάγνωση και την κύλιση της σελίδας.
+
 ### [2026-11-13] — v2.2.0: Typography Scale Upgrade (Plus Jakarta Sans + Inter), Generous Scroll Pacing, Answering-Machine Analogy & Zero Lock-in Value Pillars
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
