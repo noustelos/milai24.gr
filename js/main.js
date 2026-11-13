@@ -122,7 +122,7 @@ function setupDemoCard(config, i18n) {
         showToast(i18n.demoPlaceholderNotice || "Live demo line is in final setup. Contact us for an immediate private demo!");
         const contactSection = document.getElementById("contact");
         if (contactSection) {
-          contactSection.scrollIntoView({ behavior: "smooth" });
+          contactSection.scrollIntoView({ behavior: "auto" });
         }
       }
     });

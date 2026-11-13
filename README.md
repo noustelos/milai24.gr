@@ -110,6 +110,22 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.2.7: Fix Benefits Anchor Link & Switch to Instant Navigation Jump
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `index.html` & `en/index.html`:
+    - Διόρθωση του σπασμένου συνδέσμου «Οφέλη» / «Benefits»: Ενημέρωση του `href` σε `#benefits` (από `#problem-solution`) τόσο στο κύριο Header Navigation όσο και στο Footer.
+    - Αντιστοίχιση του `<section class="section-problem-solution" id="benefits">` με παράλληλη διατήρηση backwards-compatible anchors (`#problem-solution`, `#features`).
+    - Πλήρης επαλήθευση και των 9 anchor targets (`#benefits`, `#calculator`, `#contact`, `#demo`, `#faq`, `#hero`, `#how-it-works`, `#industries`, `#pricing`) με 100% επιτυχή ταύτιση σε υπαρκτά IDs.
+  - `css/styles.css`:
+    - Αντικατάσταση του `scroll-behavior: smooth;` με **`scroll-behavior: auto;`** στο `html` για ακαριαία, άμεση μετάβαση στις ενότητες χωρίς περιττό animation.
+    - Ορισμός **`scroll-margin-top: 5.75rem;`** (~92px) σε όλα τα section targets και στο `#demo` box, διασφαλίζοντας ότι η sticky μπάρα πλοήγησης (ύψους 76px) δεν επικαλύπτει ποτέ τους τίτλους και τα badges των ενοτήτων.
+  - `js/main.js`:
+    - Ενημέρωση του fallback scroll handler σε `contactSection.scrollIntoView({ behavior: "auto" });` για συνεπή ακαριαία συμπεριφορά.
+  - `README.md`:
+    - Ενημέρωση τεκμηρίωσης και προσθήκη Changelog v2.2.7.
+- **Σκοπός:** Άμεση αποκατάσταση της λειτουργικότητας του link «Οφέλη» και παροχή ακαριαίας, υψηλής απόκρισης πλοήγησης (instant jump) σε ολόκληρο τον ιστότοπο.
+
 ### [2026-11-13] — v2.2.6: Localized Hero Badge Tag & Natural Greek Industry Terminology
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
