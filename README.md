@@ -110,6 +110,32 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.2.0: Typography Scale Upgrade (Plus Jakarta Sans + Inter), Generous Scroll Pacing, Answering-Machine Analogy & Zero Lock-in Value Pillars
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `css/styles.css`:
+    - Εισαγωγή σύγχρονου typography pairing: **Plus Jakarta Sans** (weights 600, 700, 800) για Headings με σφιχτό letter-spacing (`-0.025em`), **Inter** (weights 400, 500, 600, 700) για μέγιστη αναγνωσιμότητα στο Body Copy, και **JetBrains Mono** για monospace technical tags & numbers.
+    - Αναβάθμιση μεγέθους γραμματοσειρών για άνετο 100% Chrome desktop zoom: βασικό `body` / `p` σε **17px (`1.0625rem`)** με `line-height: 1.7`, τίτλοι ενοτήτων `h2` / `.section-title` σε **`2.35rem` (`~38px`)**, και κάρτες `h3` σε **`1.35rem` (`~21.6px`)**.
+    - Περιορισμός του πλάτους των παραγράφων σε `max-width: 65ch` για ιδανικό μήκος γραμμής ανάγνωσης.
+    - Αύξηση του vertical breathing room (ρυθμός scroll) με padding **`6.5rem` (`104px`)** πάνω-κάτω σε όλες τις ενότητες (`--section-spacing: 6.5rem;`), διαχωρισμένες με καθαρά hairline borders `1px solid #334155`.
+    - Αύξηση εσωτερικού padding καρτών (`2.25rem`–`2.5rem`), calculator box (`3rem 2.5rem`), pricing cards (`3rem 2.5rem`) και διεύρυνση των gaps σε grids στα `2rem`.
+    - Προσθήκη στυλ για το νέο `.editorial-callout` block (Next-Gen Answering Machine Analogy) με έντονο `3px solid #F9E7B9` αριστερό accent.
+    - Προσθήκη styling και responsive κανόνων για τη νέα ενότητα `.section-pillars` και το `.pillars-grid` (4 στήλες σε desktop, 2 σε tablet, 1 σε mobile).
+  - `index.html` & `en/index.html`:
+    - Προσθήκη Google Fonts preconnect και link tags για τα font families Plus Jakarta Sans, Inter και JetBrains Mono.
+    - Προσθήκη του Editorial Callout Block στην ενότητα σύγκρισης/κλάδων με την αναλογία του εξελιγμένου αυτόματου τηλεφωνητή:
+      - EL: *«Σκεφτείτε τον σαν έναν πολύ εξελιγμένο αυτόματο τηλεφωνητή: αντί απλώς να λέει "αφήστε μήνυμα μετά το μπιπ" —όπου το 80% των πελατών κλείνει το τηλέφωνο— συζητάει φυσικά, απαντάει σε απορίες, κλείνει το ραντεβού ή καταγράφει το αίτημα, και αν προκύψει κάτι επείγον, μεταφέρει αμέσως τη γραμμή στο κινητό σας.»*
+      - EN: *«Think of it as a next-generation answering machine: instead of saying "leave a message after the beep" —where 80% of callers simply hang up— it holds a natural conversation, answers questions, books appointments, and if an urgent issue comes up, transfers the live call straight to your mobile.»*
+    - Δημιουργία της νέας ζώνης **«Γιατί milAI24 — 100% Δική σας Ιδιοκτησία χωρίς Μηνιαίο Lock-in»** / **«Why milAI24 — 100% Client Ownership with Zero Recurring Retainers»** με 4 μεγάλα value pillars (`01`–`04`):
+      1. Μηδέν Μηνιαίες Συνδρομές σε Εμάς (Turnkey Setup Fee).
+      2. 100% Δική σας Ιδιοκτησία (αριθμός και λογαριασμοί στο όνομα της επιχείρησης).
+      3. Πληρώνετε Μόνο Όσο Μιλάει (~0,10€/λεπτό απευθείας στους παρόχους χωρίς μεσάζοντα).
+      4. Ζωντανή Προώθηση σε Εσάς (Live Call Transfer σε επείγοντα).
+    - Αντιστοίχιση του anchor link `id="features"` στο section για ομαλό scroll από το navbar link «Οφέλη» / «Benefits».
+  - `README.md`:
+    - Ενημέρωση Changelog v2.2.0.
+- **Σκοπός:** Ουσιαστική αναβάθμιση της αναγνωσιμότητας (17px typography, Google Fonts Plus Jakarta Sans + Inter), άνετος ρυθμός scroll με γενναιόδωρα vertical paddings (6.5rem), άμεση κατανόηση μέσω της αναλογίας του αυτόματου τηλεφωνητή και ισχυρή οπτική εδραίωση των 4 πυλώνων Turnkey Ownership χωρίς μηνιαίες δεσμεύσεις.
+
 ### [2026-11-13] — v2.1.0: Dark-First Luxury Tech Color System (Butter Yellow & Deep Tech Obsidian)
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
