@@ -110,6 +110,24 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.2.9: Persistent Sticky Floating Navbar with Glassmorphism Blur & Instant Top Navigation
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `css/styles.css`:
+    - Πλήρης εδραίωση του Navbar ως μόνιμα ορατού floating header κατά το scroll:
+      - `position: sticky; top: 0; z-index: 1000; width: 100%;`
+      - `background-color: rgba(18, 24, 36, 0.92);` (Deep Tech Obsidian με ελαφριά διαφάνεια).
+      - `backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);` (υψηλής ευκρίνειας glassmorphism effect).
+      - `border-bottom: 1px solid #334155;` (hairline οριζόντιο περίγραμμα διαχωρισμού).
+    - Εξάλειψη πιθανών sticky conflicts: Χρήση `overflow-x: clip;` σε `html` και `body` αντί του `overflow-x: hidden`, αποτρέποντας τη δημιουργία clipping/scroll context που θα μπορούσε να μπλοκάρει τη συμπεριφορά sticky.
+    - Αύξηση του `z-index` του `.toast-notice` στα `2000` ώστε να υπερέχει του floating header.
+  - `index.html` & `en/index.html`:
+    - Επαλήθευση του συνδέσμου λογοτύπου `<a class="brand-logo" href="#hero">` για ακαριαία επιστροφή στην κορυφή της σελίδας από οποιοδήποτε σημείο κύλισης.
+    - Διατήρηση του `scroll-margin-top: 5.75rem;` (~92px) στα section targets ώστε το floating header (76px) να μην καλύπτει ποτέ τους τίτλους των ενοτήτων.
+  - `README.md`:
+    - Ενημέρωση τεκμηρίωσης και προσθήκη Changelog v2.2.9.
+- **Σκοπός:** Διαρκής, απρόσκοπτη πρόσβαση στην πλοήγηση και στο CTA button καθ' όλη τη διάρκεια του scroll, με άμεση επιστροφή στην κορυφή μέσω του λογοτύπου.
+
 ### [2026-11-13] — v2.2.8: Brand Wordmark Optical Consistency Across Headings, Tags & UI Labels
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
