@@ -59,8 +59,8 @@ window.MILAI_CONFIG = {
       en: "~€0.10 / min"
     },
     estimatedMonthlyFixedNumber: {
-      el: "~2€ - 5€ / μήνα",
-      en: "~€2 - €5 / month"
+      el: "~2€ / μήνα",
+      en: "~€2 / month"
     },
     freeYearlyUpdates: 2,
     deliveryDays: {
