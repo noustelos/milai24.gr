@@ -110,6 +110,28 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.0.1: Hero/Navbar Proportion Refinement, Single-Line Nav & Footer Logo Fix
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `index.html` & `en/index.html`:
+    - Navbar: Αφαίρεση του «Υπολογιστής ROI» / «ROI Calculator» από το header navigation.
+    - Navbar: Συντόμευση του «Κλάδοι & Επαγγελματίες» σε «Κλάδοι» («Industries») για κοφτερό, καθαρό μενού 5 συνδέσμων.
+    - Navbar: Προσαρμογή του CTA button σε «Call Live Demo» στο αγγλικό με `white-space: nowrap`.
+    - Footer: Μετονομασία συνδέσμου calculator σε «Υπολογισμός Κέρδους» («Savings Calculator»).
+    - Footer: Αντικατάσταση του παλιού λευκού square logo με το `assets/logo-dark.svg`, αποκαθιστώντας πλήρως το soundwave graphic και το wordmark σε dark background χωρίς filter inversion bugs.
+  - `css/styles.css`:
+    - Αύξηση `--container-max-width` σε `1280px` (από 1200px) ώστε ο κεντρικός H1 τίτλος να απλώνεται επιβλητικά σε 4-5 γραμμές.
+    - Επαναπροσδιορισμός της αναλογίας `.hero-grid` σε `1.15fr 0.85fr` (~57.5% αριστερά και ~42.5% δεξιά) με gap `3rem`.
+    - Compact Live Demo Window: Μείωση εσωτερικού padding (`1.25rem 1.35rem`), μείωση ύψους soundwave visualizer στα `28px`, συμπαγές phone box και περιορισμός του διαλόγου σε compact ύψος (`max-height: 85px`) για εμφάνιση ~2 γραμμών συνομιλίας χωρίς υπερχείλιση κάτω από το fold.
+    - Single-Line Navbar: Ρύθμιση font-size σε `0.875rem`, gap σε `1.35rem`, `white-space: nowrap` σε links και CTA, και `border-radius: 0px` στο λογότυπο.
+    - Βελτιστοποίηση responsive breakpoints για ομαλή μετάβαση σε tablet viewports (860px / 1024px).
+  - `assets/logo.svg`, `assets/logo-dark.svg`, `assets/favicon.svg`:
+    - Εφαρμογή κοφτερών ορθογώνιων γραμμών (`rx="0"`) στο soundwave badge και τις γραμμές του audio visualizer.
+    - Δημιουργία dedicated `assets/logo-dark.svg` για dark backgrounds (white text + emerald accents).
+  - `README.md`:
+    - Ενημέρωση Changelog v2.0.1.
+- **Σκοπός:** Βελτιστοποίηση της οπτικής ισορροπίας του Hero section, διατήρηση του Navbar σε μία καθαρή γραμμή και επιδιόρθωση του λογοτύπου στο footer.
+
 ### [2026-11-13] — v2.0.0: Vapi-Inspired Sharp Architectural UI Overhaul (Zero Border Radius, Elimination of Pills, 100% Emoji Removal, Precision Terminal Styling)
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
