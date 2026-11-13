@@ -110,6 +110,32 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.2.8: Brand Wordmark Optical Consistency Across Headings, Tags & UI Labels
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `css/styles.css`:
+    - Εισαγωγή επαναχρησιμοποιήσιμων brand wordmark utility classes:
+      - `.brand-mil`: `color: #F9E7B9; font-weight: 600;` (Rich Butter Cream, εναρμονισμένο με το logo).
+      - `.brand-ai24`: `color: #F59E0B; font-weight: 800;` (Rich Amber Gold, εναρμονισμένο με το logo).
+      - `.brand-gr`: `color: #94A3B8; font-weight: 500;` (Soft Slate για καταλήξεις domain).
+  - `index.html` & `en/index.html`:
+    - Εφαρμογή της τυπογραφικής υπογραφής `<span class="brand-mil">mil</span><span class="brand-ai24">AI24</span>` (και `.gr`) σε όλα τα σημεία υψηλής ορατότητας:
+      - Section 6 Tag: `ΓΙΑΤΙ milAI24 // ZERO LOCK-IN` & `WHY milAI24 // ZERO LOCK-IN`.
+      - Section 6 Title: `Γιατί milAI24 — 100% Δική σας Ιδιοκτησία...` & `Why milAI24 — 100% Client Ownership...`.
+      - Callout Heading: `Παθητικός Τηλεφωνητής vs Έξυπνος AI Γραμματέας milAI24` & `Passive Voicemail vs milAI24...`.
+      - Comparison Badge: `milAI24 // ACTIVE AGENT`.
+      - Pricing Model Title: `ΤΟ ΜΟΝΤΕΛΟ "TURNKEY OWNERSHIP" ΤΗΣ milAI24` & `THE milAI24 "TURNKEY OWNERSHIP" MODEL`.
+      - Table Header & Th: `Σύγκριση: milAI24 Turnkey vs...` και στήλη `milAI24.gr`.
+      - FAQ Question 1: `Σε ποιους κλάδους ταιριάζει περισσότερο το milAI24;`.
+      - Simulator Initial Sender: `milAI24 // Γραμματεία` & `milAI24 // Reception`.
+      - Footer Copyright: `milAI24.gr`.
+    - Αυστηρή τήρηση κανόνα αναγνωσιμότητας: Στα κείμενα των παραγράφων (`<p>`) και στις απαντήσεις FAQ το όνομα παραμένει ενιαίο για ξεκούραστη ανάγνωση.
+  - `js/main.js`:
+    - Ενημέρωση του δυναμικού simulator sender prefix σε `<span class="brand-mil">mil</span><span class="brand-ai24">AI24</span> // `.
+  - `README.md`:
+    - Ενημέρωση τεκμηρίωσης και προσθήκη Changelog v2.2.8.
+- **Σκοπός:** Απόλυτη οπτική ταύτιση της αναφοράς του brand σε τίτλους, tags και UI στοιχεία με το διανυσματικό λογότυπο, ενισχύοντας την premium tech ταυτότητα του milAI24.gr.
+
 ### [2026-11-13] — v2.2.7: Fix Benefits Anchor Link & Switch to Instant Navigation Jump
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**

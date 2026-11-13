@@ -169,7 +169,7 @@ function setupDialogueSimulator(config, pageLang, i18n) {
     if (bubbleSender) {
       bubbleSender.className = `bubble-sender ${step.speaker}`;
       const speakerPrefix = step.speaker === 'assistant' 
-        ? 'milAI24 // ' 
+        ? '<span class="brand-mil">mil</span><span class="brand-ai24">AI24</span> // ' 
         : (step.speaker === 'caller' ? 'CALLER // ' : 'SYSTEM // ');
       const cleanLabel = step.label.replace(/^milAI24\s*/, '');
       bubbleSender.innerHTML = `<span>${speakerPrefix}${cleanLabel}</span> <span class="lang-pill">${step.lang}</span>`;

@@ -196,6 +196,25 @@ h2, .section-title {
   border: 1px solid var(--color-border);
 }
 
+/* Brand Wordmark Typographic Signature */
+.brand-mil {
+  color: #F9E7B9;
+  font-weight: 600;
+  display: inline;
+}
+
+.brand-ai24 {
+  color: #F59E0B;
+  font-weight: 800;
+  display: inline;
+}
+
+.brand-gr {
+  color: #94A3B8;
+  font-weight: 500;
+  display: inline;
+}
+
 /* ==========================================================================
    Buttons (Sharp Architectural Rectangles)
    ========================================================================== */
