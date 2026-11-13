@@ -110,6 +110,21 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.2.2: Mobile Hero Grid Stacking & Horizontal Overflow Blowout Fix
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `css/styles.css`:
+    - Προσθήκη αυστηρού κανόνα stacking σε μία στήλη (`grid-template-columns: 1fr !important;`) στο `@media (max-width: 960px)` για το `.hero-grid`, τοποθετώντας το παράθυρο του Live Demo Simulator (`.demo-card` / `.hero-demo`) απευθείας κάτω από το κείμενο του Hero.
+    - Επίλυση του προβλήματος CSS Grid blowout: Ορισμός `min-width: 0 !important; max-width: 100% !important; width: 100% !important;` στα `.hero-content`, `.hero-demo-wrap`, `.hero-demo`, `.demo-card` και στα εσωτερικά containers (`.dialogue-preview-wrap`, `.dialogue-bubble`, `.demo-phone-box`, `.soundwave-visualizer`).
+    - Αναδίπλωση tabs κλάδων (`.scenario-tabs` / `.demo-tabs` με `flex-wrap: wrap !important;`) και `white-space: normal !important;` στα κουμπιά σεναρίων (`.scenario-tab-btn`) σε mobile/tablet, αποτρέποντας την πίεση του container πέρα από το `100vw`.
+    - Προσθήκη `overflow-x: hidden; max-width: 100vw;` τόσο στο `html` όσο και στο `body` ως καθολική ασφαλιστική δικλείδα ενάντια σε οριζόντιο scrolling.
+    - Προσθήκη dedicated κανόνων για small mobile viewports (`@media (max-width: 480px)`) με full-width κουμπιά και κάθετη στοίχιση ενεργειών.
+  - `index.html` & `en/index.html`:
+    - Προσθήκη της κλάσης `.hero-demo` στο container του προσομοιωτή (`.hero-demo-wrap.hero-demo`).
+  - `README.md`:
+    - Ενημέρωση Changelog v2.2.2.
+- **Σκοπός:** Πλήρης εξάλειψη του horizontal overflow σε mobile και tablet οθόνες (<960px) και άψογη κάθετη διάταξη του Live Demo Simulator panel.
+
 ### [2026-11-13] — v2.2.1: Typography Hierarchy Boost (Enlarged Section Tags, 2.75rem H2 Titles & Prominent Editorial Callout)
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**

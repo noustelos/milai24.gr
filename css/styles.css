@@ -70,6 +70,8 @@ html {
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-bg-primary);
   color: var(--color-text-body);
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -80,6 +82,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  max-width: 100vw;
   background-color: var(--color-bg-primary);
   color: var(--color-text-body);
 }
@@ -396,7 +399,16 @@ h2, .section-title {
 }
 
 .hero-content {
+  min-width: 0;
   max-width: 100%;
+  width: 100%;
+}
+
+.hero-demo-wrap,
+.hero-demo {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
 }
 
 /* Architectural Top Monospace Tag */
@@ -486,6 +498,10 @@ h2, .section-title {
   padding: 1.25rem 1.35rem;
   position: relative;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .demo-header {
@@ -667,6 +683,9 @@ h2, .section-title {
 .dialogue-preview-wrap {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 0.75rem;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
 }
 
 .scenario-tabs {
@@ -674,6 +693,8 @@ h2, .section-title {
   gap: 0.25rem;
   margin-bottom: 0.5rem;
   overflow-x: auto;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .scenario-tab-btn {
@@ -736,6 +757,10 @@ h2, .section-title {
   max-height: 85px;
   overflow-y: auto;
   color: #E2E8F0;
+  min-width: 0;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .dialogue-bubble.assistant {
@@ -1743,8 +1768,13 @@ h2, .section-title {
     gap: 3rem;
   }
   
-  .hero-content {
+  .hero-content,
+  .hero-demo-wrap,
+  .hero-demo,
+  .demo-card {
+    min-width: 0;
     max-width: 100%;
+    width: 100%;
   }
 
   .answering-machine-grid {
@@ -1775,6 +1805,65 @@ h2, .section-title {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
+  }
+}
+
+/* Specific Tablet & Mobile Hero Grid Stacking (<960px) & Grid Blowout Fix */
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem;
+  }
+
+  .hero-content,
+  .hero-demo-wrap,
+  .hero-demo,
+  .demo-card {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Prevent tabs from forcing horizontal overflow on mobile/tablet */
+  .scenario-tabs,
+  .demo-tabs {
+    display: flex;
+    flex-wrap: wrap !important;
+    gap: 0.35rem;
+    overflow-x: visible;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .scenario-tab-btn,
+  .demo-tab-btn {
+    white-space: normal !important;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 0.35rem);
+    min-width: 95px;
+    font-size: 0.68rem;
+    padding: 0.45rem 0.35rem;
+    line-height: 1.25;
+  }
+
+  .dialogue-preview-wrap,
+  .dialogue-bubble,
+  .demo-phone-box,
+  .soundwave-visualizer {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .dialogue-bubble {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .demo-card {
+    padding: 1.15rem 1rem;
   }
 }
 
@@ -1863,5 +1952,48 @@ h2, .section-title {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scenario-tab-btn,
+  .demo-tab-btn {
+    flex: 1 1 100% !important;
+    text-align: left;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.72rem;
+  }
+
+  .demo-phone-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .demo-call-btn,
+  .demo-copy-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .demo-phone-number {
+    font-size: 1.35rem;
+    word-break: break-all;
+  }
+
+  .dialogue-controls {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .dialogue-step-btn {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 0.65rem;
+    padding: 0.35rem 0.4rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
