@@ -74,8 +74,8 @@ window.MILAI_CONFIG = {
     el: {
       copySuccess: "Ο αριθμός αντιγράφηκε στο πρόχειρο!",
       demoPlaceholderNotice: "Η γραμμή επίδειξης είναι υπό τελική ρύθμιση. Επικοινωνήστε μαζί μας για άμεση παρουσίαση!",
-      playText: "Αυτόματο ▶",
-      pauseText: "Παύση ⏸",
+      playText: "ΑΥΤΟΜΑΤΟ",
+      pauseText: "ΠΑΥΣΗ",
       callsPerWeek: "κλήσεις / εβδομάδα",
       monthlyRevenueSuffix: "+{sum}€ / μήνα",
       annualRevenueSaved: "~{sum}€ ετήσια έσοδα που δεν χάνονται στον ανταγωνισμό",
@@ -84,8 +84,8 @@ window.MILAI_CONFIG = {
     en: {
       copySuccess: "Phone number copied to clipboard!",
       demoPlaceholderNotice: "The live demo line is in final setup. Contact us for an immediate private demo!",
-      playText: "Auto-play ▶",
-      pauseText: "Pause ⏸",
+      playText: "AUTO-PLAY",
+      pauseText: "PAUSE",
       callsPerWeek: "missed calls / week",
       monthlyRevenueSuffix: "+€{sum} / mo",
       annualRevenueSaved: "~€{sum} annual revenue saved from competitors",
@@ -100,7 +100,6 @@ window.MILAI_CONFIG = {
       medical: {
         id: "medical",
         label: "Ιατρεία & Γραφεία",
-        icon: "🩺",
         subtitle: "Διαχείριση ραντεβού, ωραρίων και καταγραφή ιστορικού/αιτήματος",
         steps: [
           {
@@ -125,14 +124,13 @@ window.MILAI_CONFIG = {
             speaker: "system",
             label: "Άμεση Ειδοποίηση (SMS & Email στον Ιατρό)",
             lang: "SYS",
-            text: "📩 Νέο Αίτημα Ραντεβού: Κωνσταντίνος Μάνθος (+30 694 XXX XXXX) • Πέμπτη 17:30 • Αιτία: Έντονος πόνος στο γόνατο • Καταχωρήθηκε αυτόματα στο ημερολόγιο."
+            text: "[CRM // CALENDAR SYNC] Νέο Αίτημα Ραντεβού: Κωνσταντίνος Μάνθος (+30 694 XXX XXXX) • Πέμπτη 17:30 • Αιτία: Έντονος πόνος στο γόνατο • Καταχωρήθηκε αυτόματα στο ημερολόγιο."
           }
         ]
       },
       technical: {
         id: "technical",
         label: "Τεχνικοί & Επαγγελματίες",
-        icon: "🔧",
         subtitle: "Καταγραφή βλαβών, περιοχής και επείγοντος περιστατικού στο πεδίο",
         steps: [
           {
@@ -157,14 +155,13 @@ window.MILAI_CONFIG = {
             speaker: "system",
             label: "SMS Alert Υψηλής Προτεραιότητας στο Κινητό Τεχνικού",
             lang: "SYS",
-            text: "🚨 ΕΠΕΙΓΟΝ: Βλάβη κλιματιστικού (διαρροή) • Μαρούσι • Ελένη Βασιλείου (+30 697 XXX XXXX) • Απαιτείται άμεση κλήση εντός 10'!"
+            text: "[DISPATCH // HIGH PRIORITY] Βλάβη κλιματιστικού (διαρροή) • Μαρούσι • Ελένη Βασιλείου (+30 697 XXX XXXX) • Απαιτείται άμεση κλήση εντός 10'!"
           }
         ]
       },
       hospitality: {
         id: "hospitality",
         label: "Ξενοδοχεία & Τουρισμός",
-        icon: "🛎️",
         subtitle: "Πολυγλωσσική εξυπηρέτηση 24/7 και direct booking SMS links",
         steps: [
           {
@@ -189,7 +186,7 @@ window.MILAI_CONFIG = {
             speaker: "system",
             label: "Άμεση Ειδοποίηση Direct Booking στο Ξενοδοχείο",
             lang: "SYS",
-            text: "📩 Νέο Αίτημα Κράτησης: Mark Stevens (+44 7700 XXX XXX) • 14-17 Ιουλίου (3 νύχτες) • Deluxe Sea View • Εστάλη direct booking link με SMS."
+            text: "[RESERVATION // DIRECT BOOKING] Νέο Αίτημα Κράτησης: Mark Stevens (+44 7700 XXX XXX) • 14-17 Ιουλίου (3 νύχτες) • Deluxe Sea View • Εστάλη direct booking link με SMS."
           }
         ]
       }
@@ -200,7 +197,6 @@ window.MILAI_CONFIG = {
       medical: {
         id: "medical",
         label: "Clinics & Offices",
-        icon: "🩺",
         subtitle: "Appointment scheduling, clinic hours, and patient request intake",
         steps: [
           {
@@ -225,14 +221,13 @@ window.MILAI_CONFIG = {
             speaker: "system",
             label: "Instant Notification (SMS & Email to Doctor)",
             lang: "SYS",
-            text: "📩 New Appointment Request: David Harris (+1 555 XXX XXXX) • Thursday 5:30 PM • Reason: Acute knee pain • Added automatically to calendar."
+            text: "[CRM // CALENDAR SYNC] New Appointment Request: David Harris (+1 555 XXX XXXX) • Thursday 5:30 PM • Reason: Acute knee pain • Added automatically to calendar."
           }
         ]
       },
       technical: {
         id: "technical",
         label: "Technicians & Services",
-        icon: "🔧",
         subtitle: "Capturing equipment breakdowns, job location, and emergency dispatch",
         steps: [
           {
@@ -257,14 +252,13 @@ window.MILAI_CONFIG = {
             speaker: "system",
             label: "Priority SMS Alert to Field Technician's Mobile",
             lang: "SYS",
-            text: "🚨 URGENT: AC breakdown (water leak) • Midtown Office • Sarah Jenkins (+1 555 XXX XXXX) • Callback required within 10 min!"
+            text: "[DISPATCH // HIGH PRIORITY] AC breakdown (water leak) • Midtown Office • Sarah Jenkins (+1 555 XXX XXXX) • Callback required within 10 min!"
           }
         ]
       },
       hospitality: {
         id: "hospitality",
         label: "Hotels & Villas",
-        icon: "🛎️",
         subtitle: "24/7 multilingual concierge and direct booking SMS links",
         steps: [
           {
@@ -289,7 +283,7 @@ window.MILAI_CONFIG = {
             speaker: "system",
             label: "Instant Direct Booking Notification to Front Desk",
             lang: "SYS",
-            text: "📩 New Booking Request: Mark Stevens (+44 7700 XXX XXX) • July 14-17 (3 nights) • Deluxe Sea View • Direct booking SMS link dispatched."
+            text: "[RESERVATION // DIRECT BOOKING] New Booking Request: Mark Stevens (+44 7700 XXX XXX) • July 14-17 (3 nights) • Deluxe Sea View • Direct booking SMS link dispatched."
           }
         ]
       }

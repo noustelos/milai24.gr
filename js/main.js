@@ -168,7 +168,11 @@ function setupDialogueSimulator(config, pageLang, i18n) {
     bubbleContainer.className = `dialogue-bubble ${step.speaker}`;
     if (bubbleSender) {
       bubbleSender.className = `bubble-sender ${step.speaker}`;
-      bubbleSender.innerHTML = `<span>${step.label}</span> <span class="lang-pill">${step.lang}</span>`;
+      const speakerPrefix = step.speaker === 'assistant' 
+        ? 'milAI24 // ' 
+        : (step.speaker === 'caller' ? 'CALLER // ' : 'SYSTEM // ');
+      const cleanLabel = step.label.replace(/^milAI24\s*/, '');
+      bubbleSender.innerHTML = `<span>${speakerPrefix}${cleanLabel}</span> <span class="lang-pill">${step.lang}</span>`;
     }
     if (bubbleText) {
       bubbleText.textContent = step.text;
@@ -241,13 +245,13 @@ function setupDialogueSimulator(config, pageLang, i18n) {
 
   function startAutoPlay() {
     isPlaying = true;
-    if (playToggleBtn) playToggleBtn.textContent = i18n.pauseText || "Pause ⏸";
+    if (playToggleBtn) playToggleBtn.textContent = i18n.pauseText || "PAUSE";
     autoPlayTimer = setInterval(advanceStep, 4500);
   }
 
   function stopAutoPlay() {
     isPlaying = false;
-    if (playToggleBtn) playToggleBtn.textContent = i18n.playText || "Auto ▶";
+    if (playToggleBtn) playToggleBtn.textContent = i18n.playText || "AUTO-PLAY";
     if (autoPlayTimer) {
       clearInterval(autoPlayTimer);
       autoPlayTimer = null;

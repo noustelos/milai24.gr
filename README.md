@@ -97,7 +97,8 @@ demoPhone: {
 
 ## 4. Mandatory AI Agent Instructions (Κανόνας για το Μέλλον)
 
-> ⚠️ **ΑΥΣΤΗΡΗ ΟΔΗΓΙΑ ΠΡΟΣ ΚΑΘΕ AI AGENT & DEVELOPER:**  
+> [!IMPORTANT]
+> **ΑΥΣΤΗΡΗ ΟΔΗΓΙΑ ΠΡΟΣ ΚΑΘΕ AI AGENT & DEVELOPER:**  
 > **ΠΡΙΝ ΟΛΟΚΛΗΡΩΣΕΤΕ ΟΠΟΙΑΔΗΠΟΤΕ ΑΛΛΑΓΗ** στον κώδικα ή στη δομή του project, **ΟΦΕΙΛΕΤΕ ΝΑ ΕΝΗΜΕΡΩΣΕΤΕ ΤΗΝ ΕΝΟΤΗΤΑ CHANGELOG ΠΑΡΑΚΑΤΩ (Append-Only)**.  
 > Κάθε καταχώριση πρέπει να περιλαμβάνει:
 > 1. Ημερομηνία (`YYYY-MM-DD`).
@@ -108,6 +109,34 @@ demoPhone: {
 ---
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
+
+### [2026-11-13] — v2.0.0: Vapi-Inspired Sharp Architectural UI Overhaul (Zero Border Radius, Elimination of Pills, 100% Emoji Removal, Precision Terminal Styling)
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `css/styles.css`:
+    - Πλήρης ανασχεδιασμός του Design System με αυστηρή, high-precision γεωμετρική αισθητική εμπνευσμένη από το **Vapi.ai**.
+    - Καθολικός μηδενισμός στρογγυλεμένων γωνιών (`border-radius: 0px !important`) σε κάρτες, κουμπιά, inputs, sliders, containers, modals, accordions και badges.
+    - Hairline `1px solid` περιγράμματα (`#E2E8F0` σε light φόντο, `#334155` / `rgba(255,255,255,0.12)` σε dark φόντο).
+    - Κατάργηση όλων των rounded pill tags πάνω από τίτλους και αντικατάστασή τους με flat monospace ετικέτες (`.section-tag`, `.hero-badge-tag` με square dot accent).
+    - Ανασχεδιασμός του Language Switcher (`GR | EN`) σε αυστηρό ορθογώνιο toggle button με hairline borders.
+    - Μετατροπή του Live Demo Box σε technical terminal panel με linear console stream logs, sharp action buttons και precision geometric soundwave.
+    - Αναβάθμιση του ROI Calculator σε technical financial modeler με αυστηρά ορθογώνια range sliders και monospace αριθμητικά readouts.
+  - `index.html` & `en/index.html`:
+    - 100% αφαίρεση όλων των Unicode emojis από κείμενα, τίτλους, σενάρια προσομοίωσης, buttons, alerts και FAQ.
+    - Αντικατάσταση των emoji icons στις 4 κάρτες κλάδων με μινιμαλιστικά, αυστηρά line SVGs (`stroke-width="1.5"`) και τεχνική τυπογραφική αρίθμηση (`01 //`, `02 //`, `03 //`, `04 //`).
+    - Αντικατάσταση των παλαιών συμβόλων στο banner σύγκρισης τηλεφωνητή με τεχνικά hairline status badges: `[LEGACY // PASSIVE VOICEMAIL]` και `[milAI24 // ACTIVE AGENT]`.
+    - Αναβάθμιση Hero badge σε `.hero-badge-tag` (`VOICE AI ARCHITECTURE // 24/7 AUTONOMOUS AGENT`).
+    - Μετατροπή contact pill box σε τεχνικό monospace readout (`.contact-readout`).
+  - `js/config.js`:
+    - Αφαίρεση όλων των emojis από τα σενάρια διαλόγων (`icon: null` / καθαρά labels `[CLINIC]`, `[FIELD]`, `[HOTEL]`).
+    - Αντικατάσταση των system notification icons με structured monospace prefixes (`[CRM // CALENDAR SYNC]`, `[DISPATCH // HIGH PRIORITY]`, `[RESERVATION // DIRECT BOOKING]`).
+    - Καθαρά monospace button strings (`ΑΥΤΟΜΑΤΟ`, `ΠΑΥΣΗ`, `AUTO-PLAY`, `PAUSE`).
+  - `js/main.js`:
+    - Αναβάθμιση του simulator dialogue renderer ώστε να αποδίδει structured linear terminal log format με speaker prefixes `milAI24 // `, `CALLER // ` και `SYSTEM // `.
+    - Αφαίρεση όλων των fallback emojis από auto-play/pause handlers.
+  - `README.md`:
+    - Προσθήκη Changelog v2.0.0 και εκκαθάριση συμβόλων.
+- **Σκοπός:** Μετάβαση σε corporate-grade, architectural tech αισθητική υψηλής ακρίβειας (Vapi.ai inspired), εξαλείφοντας πλήρως κάθε στοιχείο vibe coding, generic templates, στρογγυλεμένα pills και emojis.
 
 ### [2026-11-13] — v1.2.1: Add Smart Call Transfer to Human Feature (EL & EN)
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
