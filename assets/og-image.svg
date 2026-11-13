@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
   <rect width="1200" height="630" fill="#121824"/>
-  <circle cx="1020" cy="140" r="280" fill="#F1D693" fill-opacity="0.08"/>
+  <circle cx="1020" cy="140" r="280" fill="#F59E0B" fill-opacity="0.08"/>
   <circle cx="180" cy="520" r="240" fill="#F9E7B9" fill-opacity="0.05"/>
-  <rect x="80" y="80" width="64" height="64" rx="0" fill="#171F2E" stroke="#F1D693" stroke-width="2"/>
+  <rect x="80" y="80" width="64" height="64" rx="0" fill="#171F2E" stroke="#F59E0B" stroke-width="2"/>
   <rect x="95" y="106" width="5" height="12" rx="0" fill="#F9E7B9"/>
   <rect x="104" y="98" width="5" height="28" rx="0" fill="#F9E7B9"/>
-  <rect x="113" y="90" width="5" height="44" rx="0" fill="#F1D693"/>
+  <rect x="113" y="90" width="5" height="44" rx="0" fill="#F59E0B"/>
   <rect x="122" y="100" width="5" height="24" rx="0" fill="#F9E7B9"/>
   <rect x="131" y="107" width="5" height="10" rx="0" fill="#F9E7B9"/>
-  <text x="164" y="124" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="800">
-    <tspan fill="#FFFFFF">mil</tspan><tspan fill="#F9E7B9">AI</tspan><tspan fill="#FFFFFF">24</tspan><tspan fill="#F1D693">.gr</tspan>
+  <text x="164" y="126" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.8">
+    <tspan fill="#FFFFFF">mil</tspan><tspan fill="#F59E0B">AI24</tspan><tspan fill="#94A3B8" font-size="30" font-weight="700">.gr</tspan>
   </text>
   <text x="80" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="54" font-weight="800" fill="#FFFFFF">
     Ο Έξυπνος AI Τηλεφωνικός Γραμματέας
   </text>
-  <text x="80" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="54" font-weight="800" fill="#F1D693">
+  <text x="80" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="54" font-weight="800" fill="#F59E0B">
     που απαντάει 24/7
   </text>
   <text x="80" y="415" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#94A3B8">

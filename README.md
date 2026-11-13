@@ -110,6 +110,23 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.2.3: Enhance AI24 Wordmark Visual Contrast in SVG Brand Assets
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `assets/logo.svg` & `assets/logo-dark.svg`:
+    - Ενίσχυση της οπτικής αντίθεσης του λογοπαιγνίου «Μιλάει 24» (**`AI24`**):
+      - Το **`mil`** αποδίδεται σε καθαρό λευκό **`#FFFFFF`** (bold 800).
+      - Ολόκληρο το **`AI24`** αναδεικνύεται σε έντονο, θερμό **Rich Amber Gold (`#F59E0B`)**, εξαλείφοντας τη σύγχυση του απαλού cream και ενοποιώντας το «AI» με το «24» σε ενιαίο νοηματικό σύνολο.
+      - Η κατάληξη **`.gr`** αποδίδεται σε διακριτικό **`#94A3B8`** (Soft Slate, font-size 18px) ώστε να μη βαραίνει το κέντρο βάρους του λογοτύπου.
+      - Το τετράγωνο soundwave icon (`rx="0"`, `#171F2E` φόντο) αναβαθμίστηκε με `#F59E0B` περίγραμμα και hero bar.
+  - `assets/og-image.svg`:
+    - Εναρμόνιση του wordmark στο social preview banner με `#FFFFFF` (`mil`), `#F59E0B` (`AI24`), `#94A3B8` (`.gr`), και `#F59E0B` στο soundwave icon και στον υπότιτλο «που απαντάει 24/7».
+  - `assets/favicon.svg`:
+    - Ενημέρωση περιγράμματος και κεντρικής ράβδου σε `#F59E0B` για ομοιόμορφη χρωματική ταυτότητα.
+  - `README.md`:
+    - Ενημέρωση Changelog v2.2.3.
+- **Σκοπός:** Άμεση αναγνωσιμότητα του λογοπαιγνίου AI24 («Μιλάει 24») με μέγιστη αντίθεση έναντι του σκούρου obsidian background σε όλες τις εφαρμογές του brand (Navbar, Footer, Favicon, OG Image).
+
 ### [2026-11-13] — v2.2.2: Mobile Hero Grid Stacking & Horizontal Overflow Blowout Fix
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
