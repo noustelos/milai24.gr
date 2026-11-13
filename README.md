@@ -110,6 +110,23 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.3.1: Highlight 2 Concurrent Calls Feature on a Single Number (Zero Busy Tone)
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `index.html`:
+    - Προσθήκη σαφούς προβολής της υποστήριξης 2 ταυτόχρονων κλήσεων στον ίδιο αριθμό στην 1η κάρτα των Οφελών («2 ταυτόχρονες κλήσεις στον ίδιο αριθμό: Ακόμα κι αν μιλάει ήδη ένας πελάτης, δεύτερος πελάτης που καλεί τον ίδιο αριθμό εξυπηρετείται αμέσως ταυτόχρονα — μηδέν κατειλημμένο, μηδέν χαμένες κλήσεις.»).
+    - Ενίσχυση του 2ου Πυλώνα («100% Δική σας Ιδιοκτησία») με αναφορά στα 2 ταυτόχρονα κανάλια ομιλίας χωρίς κατειλημμένο.
+    - Προσθήκη bullet item στην Turnkey Setup κάρτα τιμολόγησης («Ελληνικός αριθμός (210 / 211) με 2 ταυτόχρονα κανάλια ομιλίας (2 κλήσεις ταυτόχρονα στον ίδιο αριθμό)») και διευκρίνιση στην κάρτα κόστους παρόχων («~2€ έως 5€ / μήνα (2 ταυτόχρονα κανάλια κλήσεων)»).
+  - `en/index.html`:
+    - Προσθήκη αντίστοιχου highlight στην 1η κάρτα Οφελών («2 concurrent calls on a single number: Even when one caller is already on the line, a second caller dialing the same number is answered immediately in parallel — zero busy signals, zero missed leads.»).
+    - Ενημέρωση του 2ου Pillar Client Ownership («Your business phone number (with 2 concurrent call channels and zero busy tones)...»).
+    - Προσθήκη του feature bullet στο Turnkey Setup card («Greek phone number (210 / 211) with 2 concurrent voice channels (handles 2 calls simultaneously on one number)») και στην κάρτα παρόχων («~€2 to €5 / month (2 concurrent call channels)»).
+  - `llms.txt`:
+    - Εμπλουτισμός των τεχνικών προδιαγραφών στην ενότητα «Τεχνική Αρχιτεκτονική & Ασφάλεια» με ρητή καταγραφή των 2 ταυτόχρονων καναλιών κλήσεων (2 Concurrent Calls / Channels) ανά βασική εγκατάσταση.
+  - `README.md`:
+    - Ενημέρωση τεκμηρίωσης και καταγραφή Changelog v2.3.1.
+- **Σκοπός:** Ξεκάθαρη επικοινωνία του κρίσιμου τεχνικού και εμπορικού πλεονεκτήματος ότι ο πελάτης λαμβάνει 2 ταυτόχρονα κανάλια φωνής στον ίδιο αριθμό, εξαλείφοντας οριστικά το σήμα κατειλημμένου και διασφαλίζοντας παράλληλη εξυπηρέτηση εισερχόμενων κλήσεων.
+
 ### [2026-11-13] — v2.3.0: Add /llms.txt Specification for Generative Engine Optimization & AI Agent Discovery
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
