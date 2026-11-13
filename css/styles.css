@@ -745,7 +745,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Problem & Solution Section (3 Cards)
+   Problem & Solution Section (Feature Cards)
    ========================================================================== */
 .section-problem-solution {
   padding: var(--section-spacing) 0;
@@ -756,6 +756,12 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+}
+
+.cards-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
 }
 
 .feature-card {
@@ -1592,6 +1598,11 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1.5rem;
   }
 
+  .cards-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
@@ -1627,6 +1638,11 @@ h1, h2, h3, h4, h5, h6 {
 
   .hero-title {
     font-size: 2.15rem;
+  }
+
+  .cards-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .pricing-cards-container {

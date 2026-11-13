@@ -109,6 +109,15 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v1.2.1: Add Smart Call Transfer to Human Feature (EL & EN)
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `index.html`: Προσθήκη 4ης κάρτας βασικού χαρακτηριστικού «Έξυπνη Προώθηση σε Άνθρωπο για Επείγοντα» στην ενότητα πλεονεκτημάτων και νέου FAQ entry για ζωντανή μεταφορά κλήσης σε κινητό/σταθερό όταν ζητηθεί ή προκύψει έκτακτη ανάγκη.
+  - `en/index.html`: Προσθήκη αντίστοιχης κάρτας «Smart Call Transfer for Urgent Matters» και σχετικού FAQ entry στα Αγγλικά.
+  - `css/styles.css`: Προσθήκη styling για `.cards-grid-4` με πλήρη responsive υποστήριξη (4 στήλες σε desktop, 2 σε tablet, 1 σε mobile).
+  - `README.md`: Ενημέρωση Changelog v1.2.1.
+- **Σκοπός:** Ενίσχυση της B2B αξιοπιστίας με διαφανή επεξήγηση της λειτουργίας escalation σε άνθρωπο (Live Call Transfer) για επείγοντα περιστατικά σε όλες τις υποστηριζόμενες γλώσσες.
+
 ### [2026-11-12] — v1.2.0: Add Full English Version (/en/) with Bilingual Simulator & Language Switcher
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που δημιουργήθηκαν / τροποποιήθηκαν:**
