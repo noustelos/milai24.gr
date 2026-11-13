@@ -7,8 +7,8 @@
   <rect x="25.5" y="14" width="3" height="16" rx="0" fill="#F9E7B9"/>
   <rect x="31" y="19" width="3" height="6" rx="0" fill="#F9E7B9"/>
 
-  <!-- Typography: mil [Pure White] + AI24 [Rich Amber Gold] + .gr [Soft Slate] -->
-  <text x="48" y="30" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="-0.5">
-    <tspan fill="#FFFFFF">mil</tspan><tspan fill="#F59E0B">AI24</tspan><tspan fill="#94A3B8" font-size="18" font-weight="700">.gr</tspan>
+  <!-- Typography: mil [Rich Butter Cream #F9E7B9] + AI24 [Rich Amber Gold #F59E0B] + .gr [Soft Slate #94A3B8] -->
+  <text x="48" y="30" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="25" letter-spacing="-0.5">
+    <tspan fill="#F9E7B9" font-weight="600">mil</tspan><tspan fill="#F59E0B" font-weight="800">AI24</tspan><tspan fill="#94A3B8" font-size="18" font-weight="500">.gr</tspan>
   </text>
 </svg>

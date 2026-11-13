@@ -8,8 +8,8 @@
   <rect x="113" y="90" width="5" height="44" rx="0" fill="#F59E0B"/>
   <rect x="122" y="100" width="5" height="24" rx="0" fill="#F9E7B9"/>
   <rect x="131" y="107" width="5" height="10" rx="0" fill="#F9E7B9"/>
-  <text x="164" y="126" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.8">
-    <tspan fill="#FFFFFF">mil</tspan><tspan fill="#F59E0B">AI24</tspan><tspan fill="#94A3B8" font-size="30" font-weight="700">.gr</tspan>
+  <text x="164" y="126" font-family="system-ui, -apple-system, sans-serif" font-size="44" letter-spacing="-0.8">
+    <tspan fill="#F9E7B9" font-weight="600">mil</tspan><tspan fill="#F59E0B" font-weight="800">AI24</tspan><tspan fill="#94A3B8" font-size="30" font-weight="500">.gr</tspan>
   </text>
   <text x="80" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="54" font-weight="800" fill="#FFFFFF">
     Ο Έξυπνος AI Τηλεφωνικός Γραμματέας

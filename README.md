@@ -110,6 +110,21 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.2.4: Unify Logo Wordmark Palette (Butter Cream #F9E7B9 & Amber Gold #F59E0B)
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `assets/logo.svg` & `assets/logo-dark.svg`:
+    - Ενοποίηση της χρωματικής παλέτας του wordmark στην ίδια ζεστή luxury tech οικογένεια:
+      - Το **`mil`** μεταβαίνει από το ψυχρό λευκό σε **`#F9E7B9` (Rich Butter Cream)** με `font-weight: 600`, εναρμονισμένο πλήρως με τις κρεμώδεις ράβδους του soundwave badge.
+      - Το **`AI24`** παραμένει σε **`#F59E0B` (Rich Amber Gold)** με `font-weight: 800`, διατηρώντας δυναμική και αρμονική ανάδειξη του λογοπαιγνίου «Μιλάει 24».
+      - Η κατάληξη **`.gr`** διατηρείται σε **`#94A3B8`** (Soft Slate) με `font-weight: 500`.
+      - Πλήρης αποφυγή stroke/outline πάνω στα γράμματα για μέγιστη ευκρίνεια και καθαρότητα σε μικρά μεγέθη (Navbar 38px / Footer 34px).
+  - `assets/og-image.svg`:
+    - Αντίστοιχος συγχρονισμός του κεντρικού hero wordmark: `mil` σε `#F9E7B9` (`font-weight: 600`), `AI24` σε `#F59E0B` (`font-weight: 800`) και `.gr` σε `#94A3B8` (`font-weight: 500`).
+  - `README.md`:
+    - Ενημέρωση Changelog v2.2.4.
+- **Σκοπός:** Απόλυτη χρωματική συνοχή και τυπογραφική αρμονία του wordmark σε όλα τα SVG assets, συνδυάζοντας το Rich Butter Cream με το Amber Gold χωρίς οπτικό κατακερματισμό ή ψυχρές αντιθέσεις.
+
 ### [2026-11-13] — v2.2.3: Enhance AI24 Wordmark Visual Contrast in SVG Brand Assets
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
