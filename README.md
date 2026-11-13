@@ -110,6 +110,22 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.3.0: Add /llms.txt Specification for Generative Engine Optimization & AI Agent Discovery
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `llms.txt`:
+    - Δημιουργία δομημένου αρχείου σύμφωνα με το επίσημο πρότυπο `llmstxt.org` για βελτιστοποίηση αναζήτησης μέσω Large Language Models (ChatGPT, Claude, Gemini, Perplexity).
+    - Περιλαμβάνει: Επίσημο Blockquote Summary, Αναλογία του Εξελιγμένου Αυτόματου Τηλεφωνητή (Value Proposition), Επιχειρηματικό Μοντέλο & Τιμολόγηση Turnkey Ownership (0€ μηνιαίες συνδρομές, 100% κυριότητα, χονδρικό pay-as-you-go ~0,10€/λεπτό), 4 Βασικούς Κλάδους Εφαρμογής (Ιατρεία, Τεχνικοί, Ξενοδοχεία, Γραφεία), Τεχνική Αρχιτεκτονική & Ασφάλεια (<600ms latency, SIP trunking, Smart Call Transfer, GDPR), Canonical Links και Στοιχεία Επικοινωνίας.
+  - `robots.txt`:
+    - Δημιουργία σύγχρονου αρχείου ελέγχου crawlers με ρητή άδεια πρόσβασης (Allow) για κορυφαία AI models (`GPTBot`, `ChatGPT-User`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `Applebot-Extended`, `CCBot`) και διασύνδεση με το `/llms.txt`.
+  - `_headers`:
+    - Προσθήκη `Content-Type: text/plain; charset=utf-8`, `Access-Control-Allow-Origin: *` (CORS) και caching headers για τα `/llms.txt` και `/robots.txt` στο Cloudflare Pages.
+  - `index.html` & `en/index.html`:
+    - Προσθήκη `<link rel="alternate" type="text/plain" title="LLM Context" href="/llms.txt">` στο `<head>` για αυτόματη ανακάλυψη από AI agents.
+  - `README.md`:
+    - Ενημέρωση τεκμηρίωσης και προσθήκη Changelog v2.3.0.
+- **Σκοπός:** Generative Engine Optimization (GEO) και πλήρης υποστήριξη AI agents, εξασφαλίζοντας ότι οι μηχανές αναζήτησης AI κατανοούν, ευρετηριάζουν και προτείνουν με ακρίβεια την υπηρεσία milAI24.gr.
+
 ### [2026-11-13] — v2.2.9: Persistent Sticky Floating Navbar with Glassmorphism Blur & Instant Top Navigation
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
