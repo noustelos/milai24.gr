@@ -273,7 +273,7 @@ h2, .section-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4.5rem;
+  height: 4.75rem;
   gap: 1.5rem;
 }
 
@@ -286,9 +286,16 @@ h2, .section-title {
 }
 
 .brand-logo img {
-  height: 34px;
+  height: 46px;
   width: auto;
+  display: block;
   border-radius: 0px !important;
+}
+
+.footer-grid .brand-logo img {
+  height: 46px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -1872,6 +1879,10 @@ h2, .section-title {
     --section-spacing: 4.5rem;
   }
 
+  .brand-logo img {
+    height: 38px;
+  }
+
   .nav-links, .nav-cta {
     display: none;
   }
@@ -1884,7 +1895,7 @@ h2, .section-title {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 4.5rem;
+    top: 4.75rem;
     left: 0;
     right: 0;
     background: #171F2E;
@@ -1956,6 +1967,10 @@ h2, .section-title {
 }
 
 @media (max-width: 480px) {
+  .brand-logo img {
+    height: 36px;
+  }
+
   .scenario-tab-btn,
   .demo-tab-btn {
     flex: 1 1 100% !important;

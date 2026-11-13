@@ -110,6 +110,24 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-13] — v2.2.5: Scale Up Navbar & Footer Logo Proportionally (Tight SVG ViewBox & 46px Desktop Height)
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `assets/logo.svg` & `assets/logo-dark.svg`:
+    - Εφαρμογή tight `viewBox="0 0 174 38"` (από `0 0 210 44`), εξαλείφοντας πλήρως το περιττό κενό πάνω, κάτω και δεξιά γύρω από το soundwave badge και το wordmark.
+    - Πλήρης αξιοποίηση του κάθετου προϋπολογισμού (visual budget) στο 100%: το soundwave badge καταλαμβάνει 36px/38px και τα γράμματα αναδεικνύονται επιβλητικά χωρίς σμίκρυνση από padding.
+    - Γεωμετρικό κεντράρισμα των 5 ράβδων του soundwave με ισομερείς αποστάσεις 5.5px αριστερά-δεξιά.
+  - `css/styles.css`:
+    - Αύξηση του ύψους του λογοτύπου (`.brand-logo img` και `.footer-grid .brand-logo img`) από 34px στα **`46px`** (`width: auto; display: block;`) σε desktop.
+    - Ρύθμιση του `.nav-container` σε `height: 4.75rem` (~76px), προσφέροντας άνετο vertical breathing room γύρω από το μεγαλύτερο logo.
+    - Προσαρμογή mobile scaling: **`38px`** σε tablet/mobile (`@media (max-width: 860px)`) και **`36px`** σε small screens (`@media (max-width: 480px)`).
+    - Επαλήθευση διάταξης: Όλα τα nav links, το `GR | EN` switcher και το CTA button παραμένουν αυστηρά σε μία (1) γραμμή (`white-space: nowrap`) σε desktop (1280px+) και tablet.
+  - `index.html` & `en/index.html`:
+    - Ενημέρωση των διαστάσεων `width="210" height="46"` στα `<img>` tags του Header και του Footer για μηδενικό Cumulative Layout Shift (CLS).
+  - `README.md`:
+    - Ενημέρωση Changelog v2.2.5.
+- **Σκοπός:** Επιβλητική οπτική παρουσία του brand `milAI24.gr` σε Header και Footer, μεγιστοποίηση της κλίμακας με tight SVG viewBox και απόλυτη διατήρηση της μονογραμμικής διάταξης του Navbar.
+
 ### [2026-11-13] — v2.2.4: Unify Logo Wordmark Palette (Butter Cream #F9E7B9 & Amber Gold #F59E0B)
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
