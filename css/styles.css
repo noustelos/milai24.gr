@@ -1966,6 +1966,329 @@ header.scrolled,
   }
 }
 
+/* ==========================================================================
+   Accessibility Widget & WCAG Theme Modes
+   ========================================================================== */
+
+/* 1. Large Text Mode */
+html.a11y-large-text {
+  font-size: 115% !important;
+}
+
+/* 2. High Contrast Mode */
+html.a11y-high-contrast {
+  --color-bg-primary: #000000 !important;
+  --color-bg-secondary: #000000 !important;
+  --color-bg-card: #0A0A0A !important;
+  --color-bg-card-hover: #141414 !important;
+  --color-bg-darkest: #000000 !important;
+  --color-navy-dark: #FFFFFF !important;
+  --color-navy-mid: #FFFFFF !important;
+  --color-navy-light: #F8FAFC !important;
+  --color-text-muted: #E2E8F0 !important;
+  --color-text-body: #FFFFFF !important;
+  --color-border: #FFF1C5 !important;
+  --color-border-dark: #FFF1C5 !important;
+  --color-border-subtle: #FFF1C5 !important;
+  --color-accent: #FFF1C5 !important;
+  --color-accent-hover: #FFFFFF !important;
+  --color-accent-gold: #FDE68A !important;
+}
+
+html.a11y-high-contrast body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.a11y-high-contrast .navbar,
+html.a11y-high-contrast .hero,
+html.a11y-high-contrast .section-problem,
+html.a11y-high-contrast .section-process,
+html.a11y-high-contrast .section-industries,
+html.a11y-high-contrast .section-pillars,
+html.a11y-high-contrast .section-pricing,
+html.a11y-high-contrast .section-faq,
+html.a11y-high-contrast .section-contact,
+html.a11y-high-contrast .footer {
+  background-color: #000000 !important;
+}
+
+html.a11y-high-contrast .industry-card,
+html.a11y-high-contrast .pillar-card,
+html.a11y-high-contrast .pricing-card,
+html.a11y-high-contrast .process-step,
+html.a11y-high-contrast .faq-item,
+html.a11y-high-contrast .contact-box,
+html.a11y-high-contrast .demo-phone-card,
+html.a11y-high-contrast .comparison-box,
+html.a11y-high-contrast .hero-dialogue-window {
+  background-color: #0A0A0A !important;
+  border-color: #FFF1C5 !important;
+}
+
+html.a11y-high-contrast p,
+html.a11y-high-contrast span:not(.btn):not(.hero-badge-tag),
+html.a11y-high-contrast li {
+  color: #FFFFFF !important;
+}
+
+html.a11y-high-contrast .navbar {
+  border-bottom: 2px solid #FFF1C5 !important;
+}
+
+/* 3. Underline Links Mode */
+html.a11y-underline-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
+}
+
+/* 4. Readable Font Mode */
+html.a11y-readable-font,
+html.a11y-readable-font body,
+html.a11y-readable-font h1,
+html.a11y-readable-font h2,
+html.a11y-readable-font h3,
+html.a11y-readable-font h4,
+html.a11y-readable-font p,
+html.a11y-readable-font span,
+html.a11y-readable-font a,
+html.a11y-readable-font li,
+html.a11y-readable-font button,
+html.a11y-readable-font input,
+html.a11y-readable-font textarea {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+/* 5. Reduce Motion Mode */
+html.a11y-reduce-motion *,
+html.a11y-reduce-motion *::before,
+html.a11y-reduce-motion *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* Accessibility Widget UI */
+.a11y-widget {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 1100;
+  font-family: var(--font-sans);
+}
+
+.a11y-trigger {
+  width: 46px;
+  height: 46px;
+  background: #171F2E;
+  border: 1px solid var(--color-accent);
+  border-radius: 0px !important;
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.a11y-trigger:hover,
+.a11y-trigger:focus-visible {
+  background: #1E293B;
+  color: #FFFFFF;
+  border-color: var(--color-accent-hover);
+  box-shadow: 0 0 12px rgba(249, 231, 185, 0.35);
+  outline: none;
+}
+
+.a11y-panel {
+  position: absolute;
+  bottom: calc(100% + 0.65rem);
+  left: 0;
+  width: 275px;
+  background: #171F2E;
+  border: 1px solid var(--color-border);
+  border-radius: 0px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65);
+  padding: 0;
+  display: none;
+  flex-direction: column;
+}
+
+.a11y-panel:not([hidden]) {
+  display: flex;
+}
+
+.a11y-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background: #121824;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.a11y-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.a11y-panel-title svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.a11y-close {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0px !important;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.a11y-close:hover,
+.a11y-close:focus-visible {
+  color: #FFFFFF;
+  border-color: var(--color-border);
+  outline: none;
+}
+
+.a11y-options-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0.65rem;
+  gap: 0.45rem;
+}
+
+.a11y-option-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.8rem;
+  background: #121824;
+  border: 1px solid var(--color-border);
+  border-radius: 0px !important;
+  color: #E2E8F0;
+  font-size: 0.84rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.a11y-option-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.a11y-option-left svg {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.a11y-status-indicator {
+  width: 8px;
+  height: 8px;
+  border: 1px solid #475569;
+  border-radius: 0px !important;
+  background: transparent;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.a11y-option-btn:hover,
+.a11y-option-btn:focus-visible {
+  background: #1E293B;
+  color: #FFFFFF;
+  border-color: #64748B;
+  outline: none;
+}
+
+.a11y-option-btn:hover .a11y-option-left svg {
+  color: var(--color-accent);
+}
+
+/* Active State for Toggled Options */
+.a11y-option-btn.is-active {
+  background: rgba(249, 231, 185, 0.08);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.a11y-option-btn.is-active .a11y-option-left svg {
+  color: var(--color-accent);
+}
+
+.a11y-option-btn.is-active .a11y-status-indicator {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 6px rgba(249, 231, 185, 0.6);
+}
+
+/* Reset Button */
+.a11y-reset-btn {
+  margin-top: 0.25rem;
+  border-top: 1px dashed var(--color-border);
+  color: #94A3B8;
+}
+
+.a11y-reset-btn:hover,
+.a11y-reset-btn:focus-visible {
+  color: #F87171;
+  border-color: #EF4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.a11y-reset-btn:hover .a11y-option-left svg {
+  color: #F87171;
+}
+
+/* High Contrast mode for the widget itself */
+html.a11y-high-contrast .a11y-widget .a11y-trigger {
+  background: #000000 !important;
+  border: 2px solid #FFF1C5 !important;
+  color: #FFF1C5 !important;
+}
+
+html.a11y-high-contrast .a11y-panel {
+  background: #000000 !important;
+  border: 2px solid #FFF1C5 !important;
+}
+
+html.a11y-high-contrast .a11y-panel-header {
+  background: #000000 !important;
+  border-bottom: 2px solid #FFF1C5 !important;
+}
+
+html.a11y-high-contrast .a11y-option-btn {
+  background: #000000 !important;
+  border: 1px solid #FFF1C5 !important;
+  color: #FFFFFF !important;
+}
+
+html.a11y-high-contrast .a11y-option-btn.is-active {
+  background: #1A1A1A !important;
+  border: 2px solid #FFF1C5 !important;
+  color: #FFF1C5 !important;
+}
+
 @media (max-width: 480px) {
   .brand-logo img {
     height: 36px;
@@ -2026,5 +2349,22 @@ header.scrolled,
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .a11y-widget {
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .a11y-trigger {
+    width: 42px;
+    height: 42px;
+  }
+
+  .a11y-panel {
+    bottom: calc(100% + 0.5rem);
+    left: 0;
+    width: calc(100vw - 2rem);
+    max-width: 285px;
   }
 }

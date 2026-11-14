@@ -1,8 +1,23 @@
 /**
  * milAI24.gr — Main Interactive Frontend Logic
  * Live demo assistant card, bilingual i18n support (Greek & English),
- * responsive sticky navigation & FAQ accordion.
+ * responsive sticky navigation, WCAG accessibility suite & FAQ accordion.
  */
+
+// Early initialization of accessibility state to prevent flash of unstyled content
+(function initAccessibilityEarly() {
+  try {
+    const saved = localStorage.getItem("milai24_a11y");
+    if (saved) {
+      const activeKeys = JSON.parse(saved);
+      if (Array.isArray(activeKeys)) {
+        activeKeys.forEach((key) => {
+          document.documentElement.classList.add(`a11y-${key}`);
+        });
+      }
+    }
+  } catch (e) {}
+})();
 
 document.addEventListener("DOMContentLoaded", () => {
   const config = window.MILAI_CONFIG || {};
@@ -31,6 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 7. Navbar scroll state
   setupHeaderScroll();
+
+  // 8. Custom WCAG Accessibility Widget
+  setupAccessibilityWidget();
 });
 
 /**
@@ -447,4 +465,140 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.remove("show");
   }, 3500);
+}
+
+/**
+ * Custom WCAG Accessibility Widget
+ * Provides 6 options: Large Text, High Contrast, Underline Links, Readable Font, Reduce Motion, Reset
+ * State is persisted in localStorage ("milai24_a11y")
+ */
+function setupAccessibilityWidget() {
+  const widget = document.getElementById("a11y-widget");
+  const trigger = document.getElementById("a11y-trigger");
+  const panel = document.getElementById("a11y-panel");
+  const closeBtn = document.getElementById("a11y-close");
+
+  if (!widget || !trigger || !panel) return;
+
+  const validKeys = [
+    "large-text",
+    "high-contrast",
+    "underline-links",
+    "readable-font",
+    "reduce-motion"
+  ];
+
+  // Sync button visual state and aria-pressed attributes with active html classes
+  function syncUI() {
+    validKeys.forEach((key) => {
+      const btn = panel.querySelector(`[data-a11y="${key}"]`);
+      if (!btn) return;
+      const isActive = document.documentElement.classList.contains(`a11y-${key}`);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+      if (isActive) {
+        btn.classList.add("is-active");
+      } else {
+        btn.classList.remove("is-active");
+      }
+    });
+  }
+
+  // Save current active keys to localStorage
+  function persistState() {
+    try {
+      const currentActive = validKeys.filter((key) =>
+        document.documentElement.classList.contains(`a11y-${key}`)
+      );
+      if (currentActive.length > 0) {
+        localStorage.setItem("milai24_a11y", JSON.stringify(currentActive));
+      } else {
+        localStorage.removeItem("milai24_a11y");
+      }
+    } catch (e) {}
+  }
+
+  // Open panel
+  function openPanel() {
+    panel.removeAttribute("hidden");
+    trigger.setAttribute("aria-expanded", "true");
+  }
+
+  // Close panel
+  function closePanel(restoreFocus = false) {
+    panel.setAttribute("hidden", "");
+    trigger.setAttribute("aria-expanded", "false");
+    if (restoreFocus) {
+      trigger.focus();
+    }
+  }
+
+  // Toggle panel
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+    if (isExpanded) {
+      closePanel();
+    } else {
+      openPanel();
+    }
+  });
+
+  // Close button
+  if (closeBtn) {
+    closeBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closePanel(true);
+    });
+  }
+
+  // Option buttons toggle
+  const optionButtons = panel.querySelectorAll(".a11y-option-btn");
+  optionButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const key = btn.dataset.a11y;
+
+      if (key === "reset") {
+        validKeys.forEach((k) => {
+          document.documentElement.classList.remove(`a11y-${k}`);
+        });
+        syncUI();
+        persistState();
+        return;
+      }
+
+      if (!validKeys.includes(key)) return;
+
+      const willBeActive = !document.documentElement.classList.contains(`a11y-${key}`);
+      if (willBeActive) {
+        document.documentElement.classList.add(`a11y-${key}`);
+      } else {
+        document.documentElement.classList.remove(`a11y-${key}`);
+      }
+
+      syncUI();
+      persistState();
+    });
+  });
+
+  // Close when clicking outside widget
+  document.addEventListener("click", (e) => {
+    if (!widget.contains(e.target)) {
+      if (trigger.getAttribute("aria-expanded") === "true") {
+        closePanel();
+      }
+    }
+  });
+
+  // Close on Escape key and return focus to trigger
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.key === "Esc") {
+      if (trigger.getAttribute("aria-expanded") === "true") {
+        closePanel(true);
+      }
+    }
+  });
+
+  // Initial UI sync
+  syncUI();
 }

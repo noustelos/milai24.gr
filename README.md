@@ -112,6 +112,38 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-14] — v2.3.6: Add Custom WCAG Accessibility Widget Matching Brand Design System
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `index.html`:
+    - Προσθήκη floating widget προσβασιμότητας στην κάτω αριστερή γωνία (`.a11y-widget`) με κομψό τετράγωνο trigger button (`46px × 46px`, `border-radius: 0px`, `#171F2E`, `border: 1px solid #F9E7B9`, καθαρό SVG εικονίδιο προσβασιμότητας, zero emojis) και πλήρες panel επιλογών WCAG στα Ελληνικά:
+      1. Μεγάλα γράμματα (`large-text`)
+      2. Υψηλή αντίθεση (`high-contrast`)
+      3. Υπογράμμιση συνδέσμων (`underline-links`)
+      4. Ευανάγνωστη γραμματοσειρά (`readable-font`)
+      5. Χωρίς κινήσεις (`reduce-motion`)
+      6. Επαναφορά (`reset`)
+  - `en/index.html`:
+    - Αντίστοιχη προσθήκη του accessibility widget στην αγγλική έκδοση με πλήρως τοπικοποιημένο panel:
+      1. Larger Text
+      2. High Contrast
+      3. Highlight Links
+      4. Readable Font
+      5. Reduce Motion
+      6. Reset All
+  - `css/styles.css`:
+    - Υλοποίηση των CSS states για κάθε λειτουργία προσβασιμότητας (`html.a11y-large-text`, `html.a11y-high-contrast`, `html.a11y-underline-links`, `html.a11y-readable-font`, `html.a11y-reduce-motion`).
+    - Αυστηρή τήρηση του design system (Butter Cream `#F9E7B9`, Deep Tech Obsidian `#171F2E` / `#121824`, `border-radius: 0px` παντού, hairline borders `#334155`).
+    - Responsive mobile breakpoints (`< 480px`) για άψογη προβολή σε μικρές οθόνες χωρίς επικάλυψη κρίσιμου περιεχομένου.
+    - Διατήρηση 100% της ισορροπίας αγκυλών (final depth: 0).
+  - `js/main.js`:
+    - Πρώιμη αρχικοποίηση (`initAccessibilityEarly`) πριν το render για αποτροπή FOUC κατά την εναλλαγή σελίδων / γλωσσών.
+    - Πλήρες state management (`setupAccessibilityWidget`) με διατήρηση των ενεργών επιλογών στο `localStorage` (`milai24_a11y`).
+    - Διαχείριση `aria-expanded`, `aria-pressed`, κλείσιμο με κλικ εκτός ή με πλήκτρο `Escape` με αυτόματη επιστροφή focus στο trigger button.
+  - `README.md`:
+    - Καταγραφή Changelog v2.3.6.
+- **Σκοπός:** Ενίσχυση της συμμόρφωσης με τα πρότυπα προσβασιμότητας WCAG, παρέχοντας 6 εξατομικευμένες ρυθμίσεις ανάγνωσης και πλοήγησης, διατηρώντας απόλυτα την πολυτελή tech αισθητική του milAI24.gr.
+
 ### [2026-11-14] — v2.3.5: Remove ROI Calculator Section & Refine Spa & Wellness Terminology
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**

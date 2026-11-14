@@ -1053,6 +1053,110 @@
     </div>
   </footer>
 
+  <!-- ======================================================================
+       Accessibility (WCAG) Floating Widget
+       ====================================================================== -->
+  <div class="a11y-widget" id="a11y-widget">
+    <button type="button" class="a11y-trigger" id="a11y-trigger" aria-label="Επιλογές Προσβασιμότητας" aria-expanded="false" aria-controls="a11y-panel" title="Επιλογές Προσβασιμότητας">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"></circle>
+        <circle cx="12" cy="7.5" r="1.5" fill="currentColor"></circle>
+        <path d="M6.5 10.5h11"></path>
+        <path d="M12 10.5v4"></path>
+        <path d="M9 18.5l3-4 3 4"></path>
+      </svg>
+    </button>
+
+    <div class="a11y-panel" id="a11y-panel" role="region" aria-label="Επιλογές Προσβασιμότητας" hidden>
+      <div class="a11y-panel-header">
+        <div class="a11y-panel-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="7.5" r="1.5" fill="currentColor"></circle>
+            <path d="M6.5 10.5h11"></path>
+            <path d="M12 10.5v4"></path>
+            <path d="M9 18.5l3-4 3 4"></path>
+          </svg>
+          <span>Προσβασιμότητα</span>
+        </div>
+        <button type="button" class="a11y-close" id="a11y-close" aria-label="Κλείσιμο μενού προσβασιμότητας">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="a11y-options-list">
+        <button type="button" class="a11y-option-btn" data-a11y="large-text" aria-pressed="false">
+          <span class="a11y-option-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="4 7 4 4 20 4 20 7"></polyline>
+              <line x1="9" y1="20" x2="15" y2="20"></line>
+              <line x1="12" y1="4" x2="12" y2="20"></line>
+            </svg>
+            <span>Μεγάλα γράμματα</span>
+          </span>
+          <span class="a11y-status-indicator" aria-hidden="true"></span>
+        </button>
+
+        <button type="button" class="a11y-option-btn" data-a11y="high-contrast" aria-pressed="false">
+          <span class="a11y-option-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"></path>
+            </svg>
+            <span>Υψηλή αντίθεση</span>
+          </span>
+          <span class="a11y-status-indicator" aria-hidden="true"></span>
+        </button>
+
+        <button type="button" class="a11y-option-btn" data-a11y="underline-links" aria-pressed="false">
+          <span class="a11y-option-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+            <span>Υπογράμμιση συνδέσμων</span>
+          </span>
+          <span class="a11y-status-indicator" aria-hidden="true"></span>
+        </button>
+
+        <button type="button" class="a11y-option-btn" data-a11y="readable-font" aria-pressed="false">
+          <span class="a11y-option-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <span>Ευανάγνωστη γραμματοσειρά</span>
+          </span>
+          <span class="a11y-status-indicator" aria-hidden="true"></span>
+        </button>
+
+        <button type="button" class="a11y-option-btn" data-a11y="reduce-motion" aria-pressed="false">
+          <span class="a11y-option-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+            <span>Χωρίς κινήσεις</span>
+          </span>
+          <span class="a11y-status-indicator" aria-hidden="true"></span>
+        </button>
+
+        <button type="button" class="a11y-option-btn a11y-reset-btn" id="a11y-reset" data-a11y="reset">
+          <span class="a11y-option-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <path d="M3 3v5h5"></path>
+            </svg>
+            <span>Επαναφορά</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
