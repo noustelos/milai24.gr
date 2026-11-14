@@ -112,6 +112,15 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-14] — v2.3.9: Add Cache-Busting Version Query to SVG Brand Assets
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `index.html` & `en/index.html`:
+    - Προσθήκη query parameter `?v=2.3.8` σε όλες τις αναφορές των SVG assets (`assets/logo.svg`, `assets/favicon.svg`, `assets/og-image.svg`) στο Open Graph meta tag, Twitter card, favicon `<link>`, Schema.org JSON-LD structured data, Navbar brand logo και Footer logo.
+  - `README.md`:
+    - Καταγραφή Changelog v2.3.9.
+- **Σκοπός:** Άμεση παράκαμψη του επιθετικού caching κανόνα του Cloudflare CDN (`Cache-Control: public, max-age=31536000, immutable`), εξασφαλίζοντας ότι όλοι οι επισκέπτες και τα social media crawlers φορτώνουν ακαριαία το νέο επίσημο λογότυπο Telephone Receiver + 5-Bar Acoustic Pulse.
+
 ### [2026-11-14] — v2.3.8: Upgrade Logo & Favicon to Telephone Receiver Acoustic Pulse SVG
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
