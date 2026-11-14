@@ -1,6 +1,7 @@
 # milAI24.gr — Turnkey Voice AI Assistants for Greek Businesses & Professionals
 
 > **Single Source of Truth (SSOT) & Project Architecture Guide**  
+> **Current Production Release:** `v2.4.1-stable` (2026-11-14)  
 > Κεντρικός χάρτης αρχιτεκτονικής, εμπορικού μοντέλου, ρυθμίσεων και ιστορικού αλλαγών.
 
 ---
@@ -111,6 +112,10 @@ demoPhone: {
 ---
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
+
+### [2026-11-14] — v2.4.1-stable: Production Milestone & Full QA Sign-off
+- **Production Release Tag (`v2.4.1-stable`):** Επίσημο Production Milestone μετά από πλήρη τεχνικό έλεγχο ακεραιότητας (HTML5, CSS3, Vanilla JS, SVG XML, WCAG 2.1 AA Accessibility Widget, Vector Brand Identity, Cloudflare Pages & Email Routing).
+- **Uniform Cache-Busting (`index.html`, `en/index.html`):** Εφαρμόστηκε `?v=2.4.1` και στα `css/styles.css`, `js/config.js` και `js/main.js` (επιπλέον των SVG brand assets) για απόλυτο συγχρονισμό με το Cloudflare CDN.
 
 ### [2026-11-14] — v2.4.1: Exact Vectorization of Reference Logo SVG
 - **SVG Brand Emblem (`assets/logo.svg`, `assets/logo-dark.svg`, `assets/favicon.svg`, `assets/og-image.svg`):** Reconstructed the 5-bar Telephone Receiver + Acoustic Pulse emblem directly from the pixel-measured reference geometry using a `maskUnits="userSpaceOnUse"` vector mask and crisp `0px`-radius outer frame, visually verified via rendered PNG inspection.
