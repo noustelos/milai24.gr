@@ -112,6 +112,27 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-14] — v2.3.5: Remove ROI Calculator Section & Refine Spa & Wellness Terminology
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `index.html`:
+    - Πλήρης αφαίρεση του `<section id="calculator">` (Υπολογιστής Απόδοσης / ROI Calculator).
+    - Αντικατάσταση του παλαιού συνδέσμου `#calculator` στο Footer (2η στήλη) με σύνδεσμο προς `#why-us` («Γιατί milAI24»), διατηρώντας ισορροπημένη 5-link πλοήγηση.
+    - Αναβάθμιση του όρου «Αισθητική» / «Εστίαση & Αισθητική» στην 4η κάρτα κλάδου σε «Εστίαση, Κέντρα Αισθητικής & Spa» και στο Footer (3η στήλη) σε «Κέντρα Αισθητικής & Spa».
+  - `en/index.html`:
+    - Πλήρης αφαίρεση του `<section id="calculator">` (ROI Performance Calculator).
+    - Αντικατάσταση του footer link `#calculator` με `#why-us` («Why milAI24»).
+    - Αναβάθμιση του τίτλου της 4ης κάρτας σε «Restaurants, Spa & Wellness» (wellness appointment management) και στο Footer σε «Spa & Wellness».
+  - `css/styles.css`:
+    - Αφαίρεση όλων των αχρησιμοποίητων κανόνων του calculator (`.section-calculator`, `.calc-box`, `.calc-grid`, `.calc-control-group`, `.calc-label`, `.calc-slider`, `.calc-result-box`, `.calc-result-title`, `.calc-result-number`, `.calc-result-sub` και `.calc-grid` στο media query) με διατήρηση 100% της ισορροπίας αγκυλών (depth: 0).
+  - `js/main.js`:
+    - Επιβεβαίωση και προστασία της `setupRoiCalculator()` με null-guard για ασφαλή εκτέλεση χωρίς DOM elements και επικαιροποίηση των file header comments.
+  - `llms.txt`:
+    - Αφαίρεση αναφορών σε ROI calculator και επικαιροποίηση των canonical link descriptions.
+  - `README.md`:
+    - Καταγραφή Changelog v2.3.5.
+- **Σκοπός:** Απλοποίηση της ροής περιεχομένου με αφαίρεση του υπολογιστή απόδοσης, εναρμόνιση της πλοήγησης στο footer και αναβάθμιση της ορολογίας του 4ου κλάδου σε «Κέντρα Αισθητικής & Spa» / «Spa & Wellness».
+
 ### [2026-11-14] — v2.3.4: Replace Chatbot Simulator with Clean Live Phone Demo Card
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**

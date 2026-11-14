@@ -44,8 +44,8 @@
 
 ## Κύριες Σελίδες (Canonical Links)
 
-- [Αρχική Σελίδα (Ελληνικά)](https://milai24.gr/): Πλήρης παρουσίαση, διαδραστικός προσομοιωτής κλήσεων ανά κλάδο (Ιατρεία, Τεχνικοί, Ξενοδοχεία), υπολογιστής κέρδους/απόσβεσης ROI, ανάλυση μοντέλου Turnkey και φόρμα επικοινωνίας.
-- [English Version](https://milai24.gr/en/): Complete overview of milAI24 AI Phone Receptionist for businesses in Greece, including interactive demo, ROI model, and turnkey setup details.
+- [Αρχική Σελίδα (Ελληνικά)](https://milai24.gr/): Πλήρης παρουσίαση, ζωντανή τηλεφωνική δοκιμή (Live Demo Call), ανάλυση κλάδων, ανάλυση μοντέλου Turnkey και φόρμα επικοινωνίας.
+- [English Version](https://milai24.gr/en/): Complete overview of milAI24 AI Phone Receptionist for businesses in Greece, including live test call, industry playbooks, and turnkey setup details.
 
 ## Στοιχεία Επικοινωνίας (Contact Information)
 

@@ -1,7 +1,7 @@
 /**
  * milAI24.gr — Main Interactive Frontend Logic
- * Multi-scenario dialogue simulator, generalized ROI calculator,
- * bilingual i18n support (Greek & English), responsive navigation & FAQ accordion.
+ * Live demo assistant card, bilingual i18n support (Greek & English),
+ * responsive sticky navigation & FAQ accordion.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
