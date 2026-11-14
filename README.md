@@ -112,6 +112,26 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-14] — v2.3.8: Upgrade Logo & Favicon to Telephone Receiver Acoustic Pulse SVG
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `assets/logo.svg` & `assets/logo-dark.svg`:
+    - Ανακατασκευή του επίσημου εμβλήματος με καθαρά χειρουργικά SVG paths και μάσκα σε `viewBox="0 0 184 38"`:
+      - Sharp square frame `0px` radius (`x="1" y="1" width="36" height="36" stroke="#F59E0B" stroke-width="1.5"`).
+      - Οι 2 αριστερές μπάρες (`#F9E7B9` Butter Yellow) σχηματίζουν το εργονομικό τηλεφωνικό ακουστικό (επάνω earpiece pad, λεπτότερη μέση λαβή, κάτω microphone pad).
+      - Οι 3 δεξιές ανερχόμενες μπάρες (`#F59E0B` Rich Amber Gold) υψώνονται κλιμακωτά στα δεξιά του ακουστικού, με το κάτω περίγραμμά τους να ακολουθεί ομαλά την καμπύλη του ακουστικού.
+      - Ομοιόμορφο negative-space acoustic wave cutout (πάχους `1.8px`) διασχίζει κυματιστά από τη λαβή του ακουστικού μέσα από τις 3 δεξιές μπάρες.
+      - Στο `assets/logo-dark.svg`, ρύθμιση του `mil` σε `#121824` και των στοιχείων σε υψηλή αντίθεση για χρήση σε ανοιχτόχρωμο φόντο.
+  - `assets/favicon.svg`:
+    - Ενημέρωση σε `viewBox="0 0 38 38"` με σκούρο φόντο `#121824` και το νέο έμβλημα Telephone Receiver + 5-Bar Acoustic Pulse για απόλυτη καθαρότητα στα browser tabs.
+  - `assets/og-image.svg`:
+    - Ενσωμάτωση του νέου εμβλήματος Telephone Receiver + 5-Bar Acoustic Pulse στην κάρτα διαμοιρασμού (Open Graph social share banner).
+  - `index.html` & `en/index.html`:
+    - Προσαρμογή των διαστάσεων του logo σε `width="223" height="46"` ώστε να αντιστοιχεί ακριβώς στο φυσικό aspect ratio του `viewBox="0 0 184 38"` χωρίς καμία παραμόρφωση ή CLS.
+  - `README.md`:
+    - Καταγραφή Changelog v2.3.8.
+- **Σκοπός:** Αναβάθμιση της οπτικής ταυτότητας και του επίσημου λογοτύπου σε ένα σύγχρονο, συμβολικό έμβλημα τηλεφωνίας και φωνητικού AI (Telephone Receiver + Acoustic Pulse) με μηδενικά gradients και χειρουργική ακρίβεια pixel.
+
 ### [2026-11-14] — v2.3.7: Resolve Accessibility Panel Toggle Visibility & Click Propagation
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**

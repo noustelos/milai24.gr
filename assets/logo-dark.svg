@@ -1,14 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174 38" fill="none" role="img" aria-label="milAI24 Logo">
-  <!-- Soundwave Icon Badge (Dark-First Luxury Tech) -->
-  <rect x="1" y="1" width="36" height="36" rx="0" fill="#171F2E" stroke="#F59E0B" stroke-width="1"/>
-  <rect x="6.5" y="15" width="3" height="8" rx="0" fill="#F9E7B9"/>
-  <rect x="12" y="10" width="3" height="18" rx="0" fill="#F9E7B9"/>
-  <rect x="17.5" y="6" width="3" height="26" rx="0" fill="#F59E0B"/>
-  <rect x="23" y="11" width="3" height="16" rx="0" fill="#F9E7B9"/>
-  <rect x="28.5" y="16" width="3" height="6" rx="0" fill="#F9E7B9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 38" fill="none" role="img" aria-label="milAI24 Logo">
+  <defs>
+    <mask id="acoustic-pulse-mask-dark">
+      <rect width="38" height="38" fill="#FFFFFF"/>
+      <path d="M 11 20 C 14.5 20, 16.5 16.8, 19 16.8 C 21.5 16.8, 23.5 19.8, 25.5 19.2 C 27.5 18.6, 29.5 15.8, 33 13.5"
+            stroke="#000000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </mask>
+  </defs>
 
-  <!-- Typography: mil [Rich Butter Cream #F9E7B9] + AI24 [Rich Amber Gold #F59E0B] + .gr [Soft Slate #94A3B8] -->
+  <!-- Sharp Square Frame (High-Contrast Amber) -->
+  <rect x="1" y="1" width="36" height="36" rx="0" fill="none" stroke="#D97706" stroke-width="1.5"/>
+
+  <!-- Telephone Receiver + 5-Bar Acoustic Pulse -->
+  <g mask="url(#acoustic-pulse-mask-dark)">
+    <!-- Bar 1 & 2: Telephone Receiver (Deep Obsidian #121824) -->
+    <!-- Earpiece (Top) -->
+    <rect x="6.5" y="7" width="3" height="6.5" rx="0" fill="#121824"/>
+    <rect x="9.5" y="7" width="2.5" height="2" rx="0" fill="#121824"/>
+    <rect x="12" y="7" width="3" height="6.5" rx="0" fill="#121824"/>
+    <!-- Slender Handle (Center) -->
+    <rect x="12.5" y="13.5" width="2" height="11" rx="0" fill="#121824"/>
+    <!-- Microphone (Bottom) -->
+    <rect x="6.5" y="24.5" width="3" height="6.5" rx="0" fill="#121824"/>
+    <rect x="9.5" y="29" width="2.5" height="2" rx="0" fill="#121824"/>
+    <rect x="12" y="24.5" width="3" height="6.5" rx="0" fill="#121824"/>
+
+    <!-- Bars 3, 4, 5: 3 Ascending Acoustic Voice Bars (Rich Amber #D97706) -->
+    <rect x="17.5" y="13.5" width="3" height="14.5" rx="0" fill="#D97706"/>
+    <rect x="23" y="9.5" width="3" height="15.5" rx="0" fill="#D97706"/>
+    <rect x="28.5" y="6" width="3" height="16" rx="0" fill="#D97706"/>
+  </g>
+
+  <!-- Typography: mil [Deep Obsidian #121824] + AI24 [Rich Amber Gold #F59E0B] + .gr [Slate #64748B] -->
   <text x="47" y="27" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="25" letter-spacing="-0.5">
-    <tspan fill="#F9E7B9" font-weight="600">mil</tspan><tspan fill="#F59E0B" font-weight="800">AI24</tspan><tspan fill="#94A3B8" font-size="18" font-weight="500">.gr</tspan>
+    <tspan fill="#121824" font-weight="600">mil</tspan><tspan fill="#F59E0B" font-weight="800">AI24</tspan><tspan fill="#64748B" font-size="18" font-weight="500">.gr</tspan>
   </text>
 </svg>
