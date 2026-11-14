@@ -112,6 +112,20 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-14] — v2.3.7: Resolve Accessibility Panel Toggle Visibility & Click Propagation
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `js/main.js`:
+    - Εξάλειψη διπλής δήλωσης `const bubbleContainer` εντός του `setupDialogueSimulator` που προκαλούσε `SyntaxError` στο parsing του JavaScript και μπλόκαρε την εκτέλεση του `DOMContentLoaded`.
+    - Αναδιάταξη της ροής αρχικοποίησης στο `DOMContentLoaded` ώστε το `setupAccessibilityWidget()` να εκτελείται άμεσα ως 1ο βήμα.
+    - Ενίσχυση της λειτουργίας ανοίγματος/κλεισίματος (`openPanel` / `closePanel`): ταυτόχρονη διαχείριση του attribute `hidden`, της κλάσης `.is-open`, του `aria-hidden` και του `aria-expanded="true|false"`.
+    - Προσθήκη `e.preventDefault()` και `e.stopPropagation()` στο click event του trigger button, καθώς και απομόνωση των clicks εντός του panel (`panel.addEventListener('click', (e) => e.stopPropagation())`) ώστε να αποτρέπεται το ακαριαίο ακούσιο κλείσιμο από το document click handler.
+  - `css/styles.css`:
+    - Προσθήκη ρητών κανόνων ορατότητας: `.a11y-panel.is-open, .a11y-panel:not([hidden]) { display: flex !important; }` και `.a11y-panel[hidden] { display: none !important; }`, διασφαλίζοντας ότι το μενού ανοίγει άμεσα και απρόσκοπτα σε όλους τους browsers και viewport μεγέθη.
+  - `README.md`:
+    - Καταγραφή Changelog v2.3.7.
+- **Σκοπός:** Άμεση αποκατάσταση της διασύνδεσης και του toggle behavior του Accessibility Widget, εξασφαλίζοντας απρόσκοπτη λειτουργία σε επιτραπέζιες και κινητές συσκευές.
+
 ### [2026-11-14] — v2.3.6: Add Custom WCAG Accessibility Widget Matching Brand Design System
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**

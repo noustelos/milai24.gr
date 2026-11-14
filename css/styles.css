@@ -2116,8 +2116,13 @@ html.a11y-reduce-motion *::after {
   flex-direction: column;
 }
 
+.a11y-panel.is-open,
 .a11y-panel:not([hidden]) {
-  display: flex;
+  display: flex !important;
+}
+
+.a11y-panel[hidden] {
+  display: none !important;
 }
 
 .a11y-panel-header {

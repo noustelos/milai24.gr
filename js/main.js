@@ -26,29 +26,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageLang = document.documentElement.lang === "en" ? "en" : "el";
   const i18n = (config.i18n && config.i18n[pageLang]) || (config.i18n && config.i18n.el) || {};
 
-  // 1. Hydrate UI elements from config.js
+  // 1. Custom WCAG Accessibility Widget (initialized first for instant reliability)
+  setupAccessibilityWidget();
+
+  // 2. Hydrate UI elements from config.js
   hydrateConfig(config, pageLang);
 
-  // 2. Setup Live Demo Phone Card & Copy functionality
+  // 3. Setup Live Demo Phone Card & Copy functionality
   setupDemoCard(config, i18n);
 
-  // 3. Interactive Multi-Scenario Dialogue Simulator
+  // 4. Interactive Multi-Scenario Dialogue Simulator (if present)
   setupDialogueSimulator(config, pageLang, i18n);
 
-  // 4. Generalized B2B ROI Calculator for all businesses
+  // 5. Generalized B2B ROI Calculator for all businesses (if present)
   setupRoiCalculator(i18n, pageLang);
 
-  // 5. Accessible FAQ Accordion
+  // 6. Accessible FAQ Accordion
   setupFaqAccordion();
 
-  // 6. Mobile Navigation Toggle
+  // 7. Mobile Navigation Toggle
   setupMobileNav();
 
-  // 7. Navbar scroll state
+  // 8. Navbar scroll state
   setupHeaderScroll();
-
-  // 8. Custom WCAG Accessibility Widget
-  setupAccessibilityWidget();
 });
 
 /**
@@ -170,7 +170,6 @@ function setupDialogueSimulator(config, pageLang, i18n) {
 
   const bubbleSender = document.getElementById("sim-sender");
   const bubbleText = document.getElementById("sim-text");
-  const bubbleContainer = document.getElementById("sim-bubble");
   const stepCounter = document.getElementById("sim-step-counter");
   const scenarioDesc = document.getElementById("sim-scenario-desc");
   const nextBtn = document.getElementById("sim-next-btn");
@@ -520,27 +519,37 @@ function setupAccessibilityWidget() {
   // Open panel
   function openPanel() {
     panel.removeAttribute("hidden");
+    panel.classList.add("is-open");
+    panel.setAttribute("aria-hidden", "false");
     trigger.setAttribute("aria-expanded", "true");
   }
 
   // Close panel
   function closePanel(restoreFocus = false) {
     panel.setAttribute("hidden", "");
+    panel.classList.remove("is-open");
+    panel.setAttribute("aria-hidden", "true");
     trigger.setAttribute("aria-expanded", "false");
     if (restoreFocus) {
       trigger.focus();
     }
   }
 
-  // Toggle panel
+  // Toggle panel on trigger click
   trigger.addEventListener("click", (e) => {
+    e.preventDefault();
     e.stopPropagation();
-    const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+    const isExpanded = trigger.getAttribute("aria-expanded") === "true" || panel.classList.contains("is-open");
     if (isExpanded) {
       closePanel();
     } else {
       openPanel();
     }
+  });
+
+  // Stop click propagation inside panel
+  panel.addEventListener("click", (e) => {
+    e.stopPropagation();
   });
 
   // Close button
@@ -584,7 +593,7 @@ function setupAccessibilityWidget() {
   // Close when clicking outside widget
   document.addEventListener("click", (e) => {
     if (!widget.contains(e.target)) {
-      if (trigger.getAttribute("aria-expanded") === "true") {
+      if (trigger.getAttribute("aria-expanded") === "true" || panel.classList.contains("is-open")) {
         closePanel();
       }
     }
@@ -593,7 +602,7 @@ function setupAccessibilityWidget() {
   // Close on Escape key and return focus to trigger
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" || e.key === "Esc") {
-      if (trigger.getAttribute("aria-expanded") === "true") {
+      if (trigger.getAttribute("aria-expanded") === "true" || panel.classList.contains("is-open")) {
         closePanel(true);
       }
     }
