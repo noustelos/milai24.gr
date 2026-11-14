@@ -112,6 +112,21 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-14] — v2.4.0: Refine Telephone Receiver Bezier Curves in Logo SVG
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `assets/logo.svg`, `assets/logo-dark.svg`, `assets/favicon.svg`, `assets/og-image.svg`:
+    - Ανασχεδιασμός του εμβλήματος με ομαλές καμπύλες Bezier (`<path>`) αντί για τετραγωνισμένα ορθογώνια:
+      - 1η μπάρα (`x="7.5"`, πλάτος `2.6px`): Καμπύλη εξωτερική ράχη του ακουστικού (`y="7.5"` έως `y="22.5"`) με στρογγυλεμένη επάνω-αριστερή γωνία `rx="2.6"` και ομαλή διαγώνια κλίση.
+      - 2η μπάρα (`x="11.5"`, πλάτος `2.6px`): Επάνω earpiece pad (`y="7.5..14.5"`), λεπτότερη μέση λαβή (`1.4px`, `y="14.5..20.5"`) και κάτω microphone pad (`y="20.5..27.2"`) με καμπύλη κάτω ακμή.
+      - 3 δεξιές ανερχόμενες μπάρες (`x="15.5"`, `19.5"`, `23.5"`, πλάτος `2.6px`, κενό `1.4px`) με αρμονική κάτω καμπύλη (`y="29.2"` -> `30.5"` -> `31.0"`).
+      - Negative-space wave cutout (`stroke-width="1.9"`, `stroke-linecap="round"`) με `maskUnits="userSpaceOnUse"` που διασχίζει κυματιστά από τη λαβή του ακουστικού μέσα από τις 4 δεξιές μπάρες.
+  - `index.html` & `en/index.html`:
+    - Ενημέρωση του cache-busting query parameter σε `?v=2.4.0` σε όλες τις αναφορές SVG (`logo.svg`, `favicon.svg`, `og-image.svg`).
+  - `README.md`:
+    - Καταγραφή Changelog v2.4.0.
+- **Σκοπός:** Απόδοση εργονομικής, ρευστής σιλουέτας τηλεφωνικού ακουστικού με ομαλές καμπύλες Bezier και άμεση ανανέωση του CDN cache.
+
 ### [2026-11-14] — v2.3.9: Add Cache-Busting Version Query to SVG Brand Assets
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
