@@ -112,6 +112,30 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-14] — v2.3.4: Replace Chatbot Simulator with Clean Live Phone Demo Card
+- **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
+- **Αρχεία που τροποποιήθηκαν:**
+  - `index.html`:
+    - Αφαίρεση του παλιού κειμενικού chat simulator («Δοκιμάστε ανά Κλάδο», tabs, dialogue bubble, προηγούμενο/παύση/επόμενο) από το δεξί panel του Hero (`#demo`).
+    - Μετατροπή σε επιβλητική **Live Phone Demo Card**:
+      - Header: `ΖΩΝΤΑΝΗ ΤΗΛΕΦΩΝΙΚΗ ΔΟΚΙΜΗ // 24/7` με soundwave bar.
+      - Κεντρικός αριθμός κλήσης `210 XXX XXXX` με ετικέτα `ΚΑΛΕΣΤΕ ΑΠΟ ΤΟ ΚΙΝΗΤΟ Ή ΤΟ ΣΤΑΘΕΡΟ ΣΑΣ` και κουμπιά «Κλήση Τώρα» & «Αντιγραφή».
+      - Zero Surcharge Note: Επισήμανση απλής αστικής κλήσης χωρίς καμία επιπλέον επιβάρυνση (δωρεάν με τα απεριόριστα λεπτά του καλούντος).
+      - 3 Minimal Technical Specs: Χρόνος απόκρισης στο 1ο χτύπημα (< 1 sec), 10+ γλώσσες, χωρητικότητα 2 ταυτόχρονων κλήσεων.
+  - `en/index.html`:
+    - Αντίστοιχη αντικατάσταση στην αγγλική έκδοση (`LIVE PHONE DEMO // 24/7`, `CALL FROM YOUR MOBILE OR LANDLINE`, Zero service surcharge note, 3 minimal technical specs).
+  - `css/styles.css`:
+    - Προσθήκη στυλ για `.demo-cost-note`, `.demo-specs-grid`, `.demo-spec-item` με hairline borders και συνεπή responsive συμπεριφορά.
+    - Ενίσχυση μεγέθους και visual presence του αριθμού κλήσης (`.demo-phone-number: 2.15rem`, monospace, butter yellow glow).
+  - `js/main.js`:
+    - Προσθήκη protective guard στην αρχή της `setupDialogueSimulator` ώστε να επιστρέφει άμεσα χωρίς κανένα console error όταν τα DOM elements του simulator δεν υπάρχουν.
+    - Διατήρηση 100% λειτουργικότητας του κουμπιού αντιγραφής αριθμού με toast alert και του κουμπιού κλήσης.
+  - `js/config.js`:
+    - Επικαιροποίηση του `demoPhone.display` σε `210 XXX XXXX` και `demoPhone.statusText` σε `ΖΩΝΤΑΝΗ ΤΗΛΕΦΩΝΙΚΗ ΔΟΚΙΜΗ // 24/7` / `LIVE PHONE DEMO // 24/7`.
+  - `README.md`:
+    - Ενημέρωση Changelog v2.3.4.
+- **Σκοπός:** Ριζική απλοποίηση και σοβαροποίηση του Hero panel, απομακρύνοντας την αίσθηση ενός web chatbot και αναδεικνύοντας τη δύναμη του τηλεφωνικού Voice AI με άμεση πρόσκληση σε ζωντανή τηλεφωνική δοκιμή.
+
 ### [2026-11-13] — v2.3.3: Clarify Inbound Carrier Rate vs AI Speech and Call Transfer Costs (100% Price Transparency)
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**

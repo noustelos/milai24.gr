@@ -134,6 +134,10 @@ function setupDemoCard(config, i18n) {
  * Supports bilingual scenarios and allows visitors to toggle between Medical, Technical/Field, and Hospitality.
  */
 function setupDialogueSimulator(config, pageLang, i18n) {
+  // Guard: if simulator markup is removed/not present, exit cleanly
+  const bubbleContainer = document.getElementById("sim-bubble");
+  if (!bubbleContainer) return;
+
   // Select scenario set based on page language
   const scenarios = (config.scenarios && config.scenarios[pageLang]) 
     || (config.scenarios && config.scenarios.el) 

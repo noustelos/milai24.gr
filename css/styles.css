@@ -563,10 +563,13 @@ header.scrolled,
   text-transform: uppercase;
 }
 
-.demo-live-status .live-square {
+.demo-live-status .live-square,
+.demo-live-status .live-indicator {
   width: 7px;
   height: 7px;
-  background: var(--color-accent-gold);
+  background: var(--color-accent);
+  display: inline-block;
+  box-shadow: 0 0 6px rgba(249, 231, 185, 0.6);
 }
 
 .demo-lang-tags {
@@ -634,34 +637,36 @@ header.scrolled,
 .demo-phone-box {
   background: #0B0F17;
   border: 1px solid var(--color-border);
-  padding: 0.85rem 1rem;
+  padding: 1.15rem 1rem;
   text-align: center;
   margin-bottom: 0.75rem;
 }
 
 .demo-phone-label {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   color: #94A3B8;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.45rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
 }
 
 .demo-phone-number {
-  font-size: 1.55rem;
+  font-size: 2.15rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: var(--color-accent);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.85rem;
   font-family: var(--font-mono);
+  line-height: 1.1;
+  text-shadow: 0 0 16px rgba(249, 231, 185, 0.25);
 }
 
 .demo-phone-actions {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
 }
 
 .demo-call-btn {
@@ -669,15 +674,16 @@ header.scrolled,
   color: #121824;
   font-family: var(--font-mono);
   font-weight: 700;
-  padding: 0.45rem 1rem;
+  padding: 0.55rem 1.25rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
+  gap: 0.45rem;
+  font-size: 0.84rem;
   border: 1px solid var(--color-accent);
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .demo-call-btn:hover {
@@ -691,14 +697,14 @@ header.scrolled,
   color: #E2E8F0;
   border: 1px solid var(--color-border);
   font-family: var(--font-mono);
-  padding: 0.45rem 0.8rem;
+  padding: 0.55rem 1rem;
   cursor: pointer;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 600;
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   white-space: nowrap;
 }
 
@@ -706,6 +712,64 @@ header.scrolled,
   background: rgba(249, 231, 185, 0.08);
   border-color: var(--color-accent-gold);
   color: var(--color-accent);
+}
+
+/* Zero Surcharge Calling Note */
+.demo-cost-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  line-height: 1.5;
+  background: #0B0F17;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  padding: 0.75rem 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.demo-cost-note svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--color-accent);
+}
+
+.demo-cost-note span {
+  flex: 1;
+}
+
+/* Minimal Technical Specs Grid */
+.demo-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+}
+
+.demo-spec-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.8rem;
+  background: #0B0F17;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  gap: 0.5rem;
+}
+
+.demo-spec-item .spec-label {
+  color: #94A3B8;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.demo-spec-item .spec-value {
+  color: #FFFFFF;
+  font-weight: 700;
+  text-align: right;
 }
 
 .demo-note {
@@ -1884,6 +1948,9 @@ header.scrolled,
   .dialogue-preview-wrap,
   .dialogue-bubble,
   .demo-phone-box,
+  .demo-cost-note,
+  .demo-specs-grid,
+  .demo-spec-item,
   .soundwave-visualizer {
     min-width: 0 !important;
     max-width: 100% !important;
@@ -2018,8 +2085,24 @@ header.scrolled,
   }
 
   .demo-phone-number {
-    font-size: 1.35rem;
+    font-size: 1.65rem;
     word-break: break-all;
+  }
+
+  .demo-spec-item {
+    font-size: 0.72rem;
+    padding: 0.5rem 0.65rem;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .demo-spec-item .spec-value {
+    text-align: left;
+  }
+
+  .demo-cost-note {
+    font-size: 0.78rem;
+    padding: 0.65rem 0.75rem;
   }
 
   .dialogue-controls {

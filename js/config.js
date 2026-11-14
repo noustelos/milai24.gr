@@ -14,12 +14,12 @@ window.MILAI_CONFIG = {
 
   // Στοιχεία Live Demo (Hero Section & Navbar CTA)
   demoPhone: {
-    display: "211 XXX XXXX",         // Εμφανιζόμενος αριθμός στην κάρτα Demo
-    raw: "+30211XXXXXXX",            // Αριθμός για κλήση (tel: link)
+    display: "210 XXX XXXX",         // Εμφανιζόμενος αριθμός στην κάρτα Demo
+    raw: "+30210XXXXXXX",            // Αριθμός για κλήση (tel: link)
     isPlaceholder: true,             // Θέστε σε false όταν συνδεθεί ο πραγματικός αριθμός
     statusText: {
-      el: "Ζωντανή Γραμμή Δοκιμής • Διαθέσιμη 24/7",
-      en: "Live Demo Line • Available 24/7"
+      el: "ΖΩΝΤΑΝΗ ΤΗΛΕΦΩΝΙΚΗ ΔΟΚΙΜΗ // 24/7",
+      en: "LIVE PHONE DEMO // 24/7"
     },
     helperNote: {
       el: "Καλέστε από κινητό ή σταθερό και μιλήστε ελεύθερα στα Ελληνικά ή Αγγλικά υποδυόμενος έναν πελάτη.",

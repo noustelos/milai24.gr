@@ -181,13 +181,13 @@
             </div>
           </div>
 
-          <!-- Hero Right Column: Live Interactive Demo Box -->
+          <!-- Hero Right Column: Live Phone Call Card -->
           <div class="hero-demo-wrap hero-demo" id="demo">
             <div class="demo-card">
               <div class="demo-header">
                 <div class="demo-live-status">
-                  <span class="live-indicator"></span>
-                  <span id="demo-status-text">Live Demo Assistant</span>
+                  <span class="live-square"></span>
+                  <span id="demo-status-text">ΖΩΝΤΑΝΗ ΤΗΛΕΦΩΝΙΚΗ ΔΟΚΙΜΗ // 24/7</span>
                 </div>
                 <div class="demo-lang-tags">
                   <span class="lang-pill">GR</span>
@@ -212,10 +212,10 @@
 
               <!-- Phone Call Box -->
               <div class="demo-phone-box">
-                <div class="demo-phone-label">Αριθμός Ζωντανής Δοκιμής (24/7)</div>
-                <div class="demo-phone-number cfg-demo-phone">211 XXX XXXX</div>
+                <div class="demo-phone-label">ΚΑΛΕΣΤΕ ΑΠΟ ΤΟ ΚΙΝΗΤΟ Ή ΤΟ ΣΤΑΘΕΡΟ ΣΑΣ</div>
+                <div class="demo-phone-number cfg-demo-phone">210 XXX XXXX</div>
                 <div class="demo-phone-actions">
-                  <a href="tel:+30211XXXXXXX" class="demo-call-btn cfg-demo-tel-link" id="demo-call-btn">
+                  <a href="tel:+30210XXXXXXX" class="demo-call-btn cfg-demo-tel-link" id="demo-call-btn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
@@ -231,48 +231,29 @@
                 </div>
               </div>
 
-              <p class="demo-note">
-                <em>Καλέστε από το κινητό σας και μιλήστε ελεύθερα στα Ελληνικά ή Αγγλικά υποδυόμενος έναν πελάτη που ζητάει ραντεβού, πληροφορίες ή εξυπηρέτηση.</em>
-              </p>
+              <!-- Zero-Cost Call Note -->
+              <div class="demo-cost-note">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <span>Καλέστε χωρίς καμία επιπλέον χρέωση υπηρεσίας (απλή αστική κλήση — δωρεάν από τα πακέτα απεριόριστων λεπτών σας) για να ακούσετε ζωντανά πώς απαντά και εξυπηρετεί ο ψηφιακός γραμματέας.</span>
+              </div>
 
-              <!-- Interactive Dialogue Simulator with Scenario Switcher -->
-              <div class="dialogue-preview-wrap">
-                <div class="preview-title">
-                  <span>Δοκιμάστε ανά Κλάδο:</span>
-                  <span class="dialogue-counter" id="sim-step-counter">1 / 4</span>
+              <!-- 3 Minimal Technical Specs -->
+              <div class="demo-specs-grid">
+                <div class="demo-spec-item">
+                  <span class="spec-label">ΧΡΟΝΟΣ ΑΠΟΚΡΙΣΗΣ</span>
+                  <span class="spec-value">Στο 1ο χτύπημα (&lt; 1 sec)</span>
                 </div>
-
-                <!-- Scenario Switcher Tabs -->
-                <div class="scenario-tabs" id="scenario-tabs" role="tablist" aria-label="Επιλογή Κλάδου Προσομοίωσης">
-                  <button type="button" class="scenario-tab-btn active" data-scenario="medical" role="tab" aria-selected="true">
-                    [CLINIC] Ιατρεία &amp; Γραφεία
-                  </button>
-                  <button type="button" class="scenario-tab-btn" data-scenario="technical" role="tab" aria-selected="false">
-                    [TECH] Τεχνικοί &amp; Συνεργεία
-                  </button>
-                  <button type="button" class="scenario-tab-btn" data-scenario="hospitality" role="tab" aria-selected="false">
-                    [HOTEL] Ξενοδοχεία &amp; Τουρισμός
-                  </button>
+                <div class="demo-spec-item">
+                  <span class="spec-label">ΓΛΩΣΣΕΣ</span>
+                  <span class="spec-value">Ελληνικά, Αγγλικά &amp; 10+ ακόμα</span>
                 </div>
-
-                <div class="scenario-desc-note" id="sim-scenario-desc">
-                  Διαχείριση ραντεβού, ωραρίων και καταγραφή ιστορικού/αιτήματος
-                </div>
-
-                <div class="dialogue-bubble assistant" id="sim-bubble">
-                  <div class="bubble-sender assistant" id="sim-sender">
-                    <span><span class="brand-mil">mil</span><span class="brand-ai24">AI24</span> // Γραμματεία</span>
-                    <span class="lang-pill">EL</span>
-                  </div>
-                  <div class="bubble-text" id="sim-text">
-                    Καλησπέρα σας! Καλέσατε το Ορθοπαιδικό Ιατρείο του κ. Δημητρίου. Είμαι η ψηφιακή γραμματέας. Πώς θα μπορούσα να σας εξυπηρετήσω;
-                  </div>
-                </div>
-
-                <div class="dialogue-controls">
-                  <button type="button" class="dialogue-step-btn" id="sim-prev-btn">ΠΡΟΗΓΟΥΜΕΝΟ</button>
-                  <button type="button" class="dialogue-step-btn" id="sim-play-toggle">ΠΑΥΣΗ</button>
-                  <button type="button" class="dialogue-step-btn" id="sim-next-btn">ΕΠΟΜΕΝΟ</button>
+                <div class="demo-spec-item">
+                  <span class="spec-label">ΧΩΡΗΤΙΚΟΤΗΤΑ</span>
+                  <span class="spec-value">2 ταυτόχρονες κλήσεις</span>
                 </div>
               </div>
 
