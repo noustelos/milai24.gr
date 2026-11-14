@@ -112,6 +112,10 @@ demoPhone: {
 
 ## 5. Changelog / Ημερολόγιο Αλλαγών (Append-Only)
 
+### [2026-11-14] — v2.4.1: Exact Vectorization of Reference Logo SVG
+- **SVG Brand Emblem (`assets/logo.svg`, `assets/logo-dark.svg`, `assets/favicon.svg`, `assets/og-image.svg`):** Reconstructed the 5-bar Telephone Receiver + Acoustic Pulse emblem directly from the pixel-measured reference geometry using a `maskUnits="userSpaceOnUse"` vector mask and crisp `0px`-radius outer frame, visually verified via rendered PNG inspection.
+- **Cache-Busting (`index.html`, `en/index.html`):** Bumped SVG asset query parameters from `?v=2.4.0` to `?v=2.4.1`.
+
 ### [2026-11-14] — v2.4.0: Refine Telephone Receiver Bezier Curves in Logo SVG
 - **Συντάκτης:** Antigravity AI (Senior Front-End Architect & Technical Product Designer)
 - **Αρχεία που τροποποιήθηκαν:**
